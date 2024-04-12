@@ -1,0 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace BookReviewApp.Server.Controllers.Entities
+{
+  public class Comment {}
+}
