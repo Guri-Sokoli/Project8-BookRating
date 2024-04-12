@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "Bxd6oZ/77AoUyPA4iolTwN5808OFuXfe3pWldIpUJu4=",
+  "Source": "BookReviewApp.Server",
+  "BasePath": "_content/BookReviewApp.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\guris\\Desktop\\LIFE\\BackEnd_Intro-(mpw-eawz-ccx)\\BookReviewApp\\bookreviewapp.client\\bookreviewapp.client.esproj",
+      "Version": 2,
+      "Source": "bookreviewapp.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

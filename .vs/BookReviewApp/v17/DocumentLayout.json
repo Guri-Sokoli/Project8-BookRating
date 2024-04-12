@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\guris\\Desktop\\LIFE\\BackEnd_Intro-(mpw-eawz-ccx)\\BookReviewApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{974F11B0-4AD4-4675-B2DB-7DA00A6A3A3E}|bookreviewapp.client\\bookreviewapp.client.esproj|c:\\users\\guris\\desktop\\life\\backend_intro-(mpw-eawz-ccx)\\bookreviewapp\\bookreviewapp.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{974F11B0-4AD4-4675-B2DB-7DA00A6A3A3E}|bookreviewapp.client\\bookreviewapp.client.esproj|solutionrelative:bookreviewapp.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Users\\guris\\Desktop\\LIFE\\BackEnd_Intro-(mpw-eawz-ccx)\\BookReviewApp\\bookreviewapp.client\\src\\App.jsx",
+              "RelativeDocumentMoniker": "bookreviewapp.client\\src\\App.jsx",
+              "ToolTip": "C:\\Users\\guris\\Desktop\\LIFE\\BackEnd_Intro-(mpw-eawz-ccx)\\BookReviewApp\\bookreviewapp.client\\src\\App.jsx",
+              "RelativeToolTip": "bookreviewapp.client\\src\\App.jsx",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-04-12T13:57:18.193Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
