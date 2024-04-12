@@ -2,7 +2,7 @@
 "SpaProxyServer": {
 "ServerUrl": "https://localhost:5173",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "C:\\Users\\guris\\Desktop\\LIFE\\BackEnd_Intro-(mpw-eawz-ccx)\\BookReviewApp\\BookReviewApp.Server\\..\\bookreviewapp.client",
+"WorkingDirectory": "C:\\Users\\Buton\\Desktop\\Project8\\BookReviewApp.Server\\..\\bookreviewapp.client",
 "MaxTimeoutInSeconds": "120"
 }
 }

@@ -589,19 +589,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\guris\\.nuget\\packages\\": {}
+    "C:\\Users\\Buton\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\guris\\Desktop\\LIFE\\BackEnd_Intro-(mpw-eawz-ccx)\\BookReviewApp\\BookReviewApp.Server\\BookReviewApp.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Buton\\Desktop\\Project8\\BookReviewApp.Server\\BookReviewApp.Server.csproj",
       "projectName": "BookReviewApp.Server",
-      "projectPath": "C:\\Users\\guris\\Desktop\\LIFE\\BackEnd_Intro-(mpw-eawz-ccx)\\BookReviewApp\\BookReviewApp.Server\\BookReviewApp.Server.csproj",
-      "packagesPath": "C:\\Users\\guris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\guris\\Desktop\\LIFE\\BackEnd_Intro-(mpw-eawz-ccx)\\BookReviewApp\\BookReviewApp.Server\\obj\\",
+      "projectPath": "C:\\Users\\Buton\\Desktop\\Project8\\BookReviewApp.Server\\BookReviewApp.Server.csproj",
+      "packagesPath": "C:\\Users\\Buton\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Buton\\Desktop\\Project8\\BookReviewApp.Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\guris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Buton\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

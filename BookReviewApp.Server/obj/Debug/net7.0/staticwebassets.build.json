@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "Bxd6oZ/77AoUyPA4iolTwN5808OFuXfe3pWldIpUJu4=",
+  "Hash": "v3VmTtWzSiHG+DCzSai3vz2+IUAWCbb78A+ZrCZVK10=",
   "Source": "BookReviewApp.Server",
   "BasePath": "_content/BookReviewApp.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\guris\\Desktop\\LIFE\\BackEnd_Intro-(mpw-eawz-ccx)\\BookReviewApp\\bookreviewapp.client\\bookreviewapp.client.esproj",
+      "Identity": "C:\\Users\\Buton\\Desktop\\Project8\\bookreviewapp.client\\bookreviewapp.client.esproj",
       "Version": 2,
       "Source": "bookreviewapp.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
