@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gresa\\OneDrive\\Desktop\\BookRatingServer\\BookRating\\BookRating\\BookRating.csproj": {}
+    "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gresa\\OneDrive\\Desktop\\BookRatingServer\\BookRating\\BookRating\\BookRating.csproj": {
+    "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gresa\\OneDrive\\Desktop\\BookRatingServer\\BookRating\\BookRating\\BookRating.csproj",
+        "projectUniqueName": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
         "projectName": "BookRating",
-        "projectPath": "C:\\Users\\gresa\\OneDrive\\Desktop\\BookRatingServer\\BookRating\\BookRating\\BookRating.csproj",
+        "projectPath": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
         "packagesPath": "C:\\Users\\gresa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gresa\\OneDrive\\Desktop\\BookRatingServer\\BookRating\\BookRating\\obj\\",
+        "outputPath": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gresa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,26 +48,6 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.16, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.18, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.18, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[7.0.18, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.18, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
