@@ -1,3 +1,4 @@
+using BookRating.DataAccess;
 using BookRating.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;

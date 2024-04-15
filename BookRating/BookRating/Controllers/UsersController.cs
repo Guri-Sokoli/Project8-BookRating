@@ -1,4 +1,5 @@
-﻿using BookRating.Models;
+﻿using BookRating.DataAccess;
+using BookRating.Models;
 using BookTating.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -10,6 +11,7 @@ namespace BookRating.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class UsersController : ControllerBase
     {
         private readonly BookRatingDbContext _context;
