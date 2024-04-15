@@ -26,6 +26,30 @@ const books = [
         initialRating: 3.4,
         isEditable: true,
     },
+    {
+        title: "Title of Book 3",
+        author: "Author of Book 3",
+        initialRating: 5,
+        isEditable: true,
+    },
+    {
+        title: "Title of Book 4",
+        author: "Author of Book 4",
+        initialRating: 3.4,
+        isEditable: true,
+    },
+    {
+        title: "Title of Book 3",
+        author: "Author of Book 3",
+        initialRating: 5,
+        isEditable: true,
+    },
+    {
+        title: "Title of Book 4",
+        author: "Author of Book 4",
+        initialRating: 3.4,
+        isEditable: true,
+    },
 ];
 
 function App() {

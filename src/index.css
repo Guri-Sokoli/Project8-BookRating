@@ -19,3 +19,22 @@
 .animate-fade-in-out {
     animation: fadeInOut 3s ease-in-out;
 }
+
+/* Removes scroll bar in all browsers*/
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll-snap-x {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.scroll-snap-align-start {
+    scroll-snap-align: start;
+}

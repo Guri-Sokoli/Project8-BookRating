@@ -4,15 +4,17 @@ import Book from "./Book";
 
 const popularSectionHome = ({ books }) => {
     return (
-        <div className="flex flex-row w-screen overflow-x-auto">
+        <div className="flex flex-nowrap scroll-snap-x snap-start no-scrollbar">
             {books.map((book, index) => (
-                <Book
-                    key={index}
-                    title={book.title}
-                    author={book.author}
-                    initialRating={book.initialRating}
-                    isEditable={book.isEditable}
-                />
+                <div className="scroll-snap-align-start">
+                    <Book
+                        key={index}
+                        title={book.title}
+                        author={book.author}
+                        initialRating={book.initialRating}
+                        isEditable={book.isEditable}
+                    />
+                </div>
             ))}
         </div>
     );

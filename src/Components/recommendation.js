@@ -4,8 +4,8 @@ import continueIcon from "../assets/continue.svg";
 
 const leftOffBook = () => {
     return (
-        <div className="flex flex-col justify-center items-center w-max">
-            <div className="flex flex-row justify-around md:justify-center w-screen bg-[#E8E0C6]">
+        <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-row justify-around md:justify-center w-full bg-[#E8E0C6]">
                 <div
                     className="flex w-32 h-48 bg-gray-300 m-4 items-center justify-center
                                 md:mx-12"

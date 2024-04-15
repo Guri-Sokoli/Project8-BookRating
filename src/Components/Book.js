@@ -85,7 +85,7 @@ const Book = ({ title, author, initialRating, isEditable }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-around md:justify-center w-fit mx-4 mb-6 overflow-x-hidden">
+        <div className="flex flex-col items-center justify-around md:justify-center w- mx-4 mb-6 overflow-x-hidden">
             <div className="flex w-32 h-48 bg-gray-300 drop-shadow-xl m-4 md:mx-12 md:w-48 md:h-64">
                 {/* Image of Cover of Already Reading Book */}
             </div>
