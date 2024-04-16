@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\dtos\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dtos\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\dtos\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dtos\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\bookrating.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\bookrating.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\dtos\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dtos\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,6 +43,14 @@
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\bookrating.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\bookrating.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\dataaccess\\bookratingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dataaccess\\bookratingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,12 +94,11 @@
               "RelativeToolTip": "BookRating\\DTOs\\UserLogIn.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T00:46:52.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-16T00:46:52.408Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Category.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\Category.cs",
@@ -111,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Book.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\Book.cs",
@@ -123,33 +122,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UserRegistration.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\UserRegistration.cs",
               "RelativeDocumentMoniker": "BookRating\\DTOs\\UserRegistration.cs",
               "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\UserRegistration.cs",
               "RelativeToolTip": "BookRating\\DTOs\\UserRegistration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAuAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAowBMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T20:06:32.942Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "BookRating\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\AuthController.cs",
               "RelativeToolTip": "BookRating\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAAF8AAAAWAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAAF8AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T19:35:00.257Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "BookRatingDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
@@ -161,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "20240415200716_initial_migration.Designer.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
               "RelativeDocumentMoniker": "BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
@@ -173,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Review.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\Review.cs",
@@ -185,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\User.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\User.cs",
@@ -197,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Program.cs",
               "RelativeDocumentMoniker": "BookRating\\Program.cs",
@@ -209,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\appsettings.json",
               "RelativeDocumentMoniker": "BookRating\\appsettings.json",
@@ -217,12 +216,11 @@
               "RelativeToolTip": "BookRating\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-15T19:55:24.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-15T19:55:24.504Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "BookRating.csproj",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
               "RelativeDocumentMoniker": "BookRating\\BookRating.csproj",
@@ -230,8 +228,7 @@
               "RelativeToolTip": "BookRating\\BookRating.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-15T19:40:06.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-15T19:40:06.297Z"
             },
             {
               "$type": "Document",
@@ -266,8 +263,7 @@
               "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
               "RelativeToolTip": "BookRating\\BookRating.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-15T19:51:54.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-15T19:51:54.911Z"
             },
             {
               "$type": "Document",
