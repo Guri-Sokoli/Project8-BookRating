@@ -1,65 +1,69 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\",
+  "WorkspaceRootPath": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\migrations\\bookratingdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\migrations\\bookratingdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\migrations\\20240415200716_initial_migration.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\migrations\\20240415200716_initial_migration.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\dtos\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dtos\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\dataaccess\\bookratingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dataaccess\\bookratingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\dtos\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dtos\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\bookrating.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\dtos\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dtos\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\bookrating.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\bookrating.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\bookrating.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\bookrating.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\migrations\\bookratingdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\migrations\\bookratingdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\migrations\\20240415200716_initial_migration.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\migrations\\20240415200716_initial_migration.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\dataaccess\\bookratingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dataaccess\\bookratingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend\\project8-bookrating\\bookrating\\bookrating\\migrations\\20240415200716_initial_migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\bookrating.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\bookrating.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\migrations\\20240415200716_initial_migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\migrations\\20240415200716_initial_migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -70,19 +74,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
+              "Title": "UserLogIn.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\UserLogIn.cs",
+              "RelativeDocumentMoniker": "BookRating\\DTOs\\UserLogIn.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\UserLogIn.cs",
+              "RelativeToolTip": "BookRating\\DTOs\\UserLogIn.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T00:46:52.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Models\\Category.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Category.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\Category.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Category.cs",
               "RelativeToolTip": "BookRating\\Models\\Category.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -90,11 +111,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Models\\Book.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Book.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\Book.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Models\\Book.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Book.cs",
               "RelativeToolTip": "BookRating\\Models\\Book.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -102,61 +123,61 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "UserRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\UserRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\UserRegistration.cs",
               "RelativeDocumentMoniker": "BookRating\\DTOs\\UserRegistration.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\UserRegistration.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\UserRegistration.cs",
               "RelativeToolTip": "BookRating\\DTOs\\UserRegistration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T20:06:32.942Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "BookRating\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "BookRating\\Controllers\\UsersController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T19:35:00.257Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BookRatingDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
-              "RelativeToolTip": "BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAArwA0AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T21:10:12.232Z",
+              "WhenOpened": "2024-04-15T20:06:32.942Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20240415200716_initial_migration.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
-              "RelativeDocumentMoniker": "BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
-              "RelativeToolTip": "BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAAA4AAAAWAAAA",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BookRating\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BookRating\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAF8AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T21:51:12.204Z",
+              "WhenOpened": "2024-04-15T19:35:00.257Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "BookRatingDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
+              "RelativeToolTip": "BookRating\\Migrations\\BookRatingDbContextModelSnapshot.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAArwBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T21:10:12.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20240415200716_initial_migration.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
+              "RelativeDocumentMoniker": "BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
+              "RelativeToolTip": "BookRating\\Migrations\\20240415200716_initial_migration.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAMBdwA4AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T21:51:12.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Models\\Review.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Review.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\Review.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Models\\Review.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Review.cs",
               "RelativeToolTip": "BookRating\\Models\\Review.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -164,11 +185,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Models\\User.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\User.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\User.cs",
               "RelativeToolTip": "BookRating\\Models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -176,48 +197,49 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Program.cs",
               "RelativeDocumentMoniker": "BookRating\\Program.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Program.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Program.cs",
               "RelativeToolTip": "BookRating\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T19:52:00.389Z",
+              "WhenOpened": "2024-04-15T19:52:00.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\appsettings.json",
+              "RelativeDocumentMoniker": "BookRating\\appsettings.json",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\appsettings.json",
+              "RelativeToolTip": "BookRating\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-15T19:55:24.504Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\appsettings.json",
-              "RelativeDocumentMoniker": "BookRating\\appsettings.json",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\appsettings.json",
-              "RelativeToolTip": "BookRating\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-15T19:55:24.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 4,
               "Title": "BookRating.csproj",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
               "RelativeDocumentMoniker": "BookRating\\BookRating.csproj",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
               "RelativeToolTip": "BookRating\\BookRating.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-15T19:40:06.297Z"
+              "WhenOpened": "2024-04-15T19:40:06.297Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "BookRatingDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\DataAccess\\BookRatingDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\DataAccess\\BookRatingDbContext.cs",
               "RelativeDocumentMoniker": "BookRating\\DataAccess\\BookRatingDbContext.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\DataAccess\\BookRatingDbContext.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\DataAccess\\BookRatingDbContext.cs",
               "RelativeToolTip": "BookRating\\DataAccess\\BookRatingDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -227,9 +249,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Dockerfile",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Dockerfile",
               "RelativeDocumentMoniker": "BookRating\\Dockerfile",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Dockerfile",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Dockerfile",
               "RelativeToolTip": "BookRating\\Dockerfile",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -237,22 +259,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "BookRating",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
               "RelativeDocumentMoniker": "BookRating\\BookRating.csproj",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
               "RelativeToolTip": "BookRating\\BookRating.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-15T19:51:54.911Z"
+              "WhenOpened": "2024-04-15T19:51:54.911Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "20240415200716_initial_migration.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\20240415200716_initial_migration.cs",
+              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\20240415200716_initial_migration.cs",
               "RelativeDocumentMoniker": "BookRating\\Migrations\\20240415200716_initial_migration.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\20240415200716_initial_migration.cs",
+              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Migrations\\20240415200716_initial_migration.cs",
               "RelativeToolTip": "BookRating\\Migrations\\20240415200716_initial_migration.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
