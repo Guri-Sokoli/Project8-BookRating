@@ -79,8 +79,31 @@ namespace BookRating.Controllers
             }
             return BadRequest(ModelState);
         }
+        [HttpGet("details"), Authorize]
+        public async Task<IActionResult> GetUserDetails()
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return Unauthorized(new { message = "Invalid token." });
+            }
 
-       private string CreateToken(User user)
+            var user = await _context.Users.FindAsync(int.Parse(userIdClaim.Value));
+            if (user == null)
+            {
+                return NotFound(new { message = "User not found." });
+            }
+
+            var userDetails = new UserDetails
+            {
+                Username = user.Username,
+                Email = user.Email,
+                Role = user.Role
+            };
+            return Ok(userDetails);
+        }
+
+    private string CreateToken(User user)
         {
             List<Claim> claims = new List<Claim>
             {
