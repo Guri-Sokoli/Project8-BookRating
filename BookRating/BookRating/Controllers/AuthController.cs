@@ -2,6 +2,7 @@
 using BookRating.DTOs;
 using BookRating.Models;
 using BookTating.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -39,11 +40,14 @@ namespace BookRating.Controllers
                 }
 
                 string passwordHash = BCrypt.Net.BCrypt.HashPassword(newUser.Password);
+
                 var user = new User
                 {
                     Username = newUser.Username,
                     Email = newUser.Email,
-                    PasswordHash = passwordHash 
+                    PasswordHash = passwordHash,
+                    //Role = Role.User.ToRoleString()
+                    Role = "User"
                 };
 
                 _context.Users.Add(user);
@@ -80,8 +84,10 @@ namespace BookRating.Controllers
         {
             List<Claim> claims = new List<Claim>
             {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Name, user.Email)
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(

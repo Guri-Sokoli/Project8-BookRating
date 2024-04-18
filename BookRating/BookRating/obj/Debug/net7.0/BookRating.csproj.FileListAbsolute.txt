@@ -155,3 +155,6 @@ C:\Users\Buton\Desktop\Backend\Project8-BookRating\BookRating\BookRating\obj\Deb
 C:\Users\Buton\Desktop\Backend\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\ref\BookRating.dll
 C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\bin\Debug\net7.0\Scrutor.dll
+C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
