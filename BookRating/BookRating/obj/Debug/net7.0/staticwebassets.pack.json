@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1b955071-9bde-4a89-a9a5-79d79078be44.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cover\\1b955071-9bde-4a89-a9a5-79d79078be44.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BookRating.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.BookRating.props",
+      "PackagePath": "build\\BookRating.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.BookRating.props",
+      "PackagePath": "buildMultiTargeting\\BookRating.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.BookRating.props",
+      "PackagePath": "buildTransitive\\BookRating.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
