@@ -1,23 +1,25 @@
+// src/Components/ReccomendationSection.js
 import React from "react";
-import "../index.css";
-import Book from "./Book";
+import RecommendedBook from "./ReccomendedBook";
 
-const popularSectionHome = ({ books }) => {
+const RecommendationSection = ({ books }) => {
     return (
         <div className="flex flex-nowrap scroll-snap-x snap-start no-scrollbar">
             {books.map((book, index) => (
                 <div className="scroll-snap-align-start">
-                    <Book
+                    <RecommendedBook
                         key={index}
                         title={book.title}
                         author={book.author}
-                        initialRating={book.initialRating}
-                        isEditable={book.isEditable}
+                        description={book.description}
+                        cover={book.cover}
+                        rating={book.rating}
                     />
                 </div>
             ))}
+            {/* Render the book object you created */}
         </div>
     );
 };
 
-export default popularSectionHome;
+export default RecommendationSection;

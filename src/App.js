@@ -1,7 +1,8 @@
 import Header from "./Components/header.js";
-import LeftOffBook from "./Components/recommendation.js";
+import LeftOffBook from "./Components/leftOffBook.js";
 import PopularSection from "./Components/popularSectionHome.js";
-const books = [
+import ReccomendationSection from "./Components/ReccomendationSection.js";
+const popBooks = [
     {
         title: "Title of Book 1",
         author: "Author of Book 1",
@@ -52,6 +53,33 @@ const books = [
     },
 ];
 
+const recBooks = [
+    {
+        title: "Harry Potter and the Philosopher's Stone",
+        author: "J.K. Rowling",
+        description:
+            "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
+        cover: "", // We'll leave this empty as per your request
+        rating: 4.5, // Add this line
+    },
+    {
+        title: "Harry Potter and the Philosopher's Stone",
+        author: "J.K. Rowling",
+        description:
+            "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
+        cover: "", // We'll leave this empty as per your request
+        rating: 4.5, // Add this line
+    },
+    {
+        title: "Harry Potter and the Philosopher's Stone",
+        author: "J.K. Rowling",
+        description:
+            "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
+        cover: "", // We'll leave this empty as per your request
+        rating: 4.5, // Add this line
+    },
+];
+
 function App() {
     return (
         <div className="bg-[#FFF7E7]">
@@ -66,11 +94,15 @@ function App() {
             </h1>
             <LeftOffBook />
 
-            <h1 className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
+            <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
                 Popular Now
-            </h1>
+            </div>
+            <PopularSection books={popBooks} />
 
-            <PopularSection books={books} />
+            <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
+                Reccomendation
+            </div>
+            <ReccomendationSection books={recBooks} />
         </div>
     );
 }
