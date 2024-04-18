@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "/UEzzAAo1OhO+9/peem8mfaOkxQgp9p0lN0bpbEFCNE=",
+  "Hash": "7U5pAW4Hfthfw/wbwZeOWAnOp5z+kA7qJiVs/Z+IIEw=",
   "Source": "BookRating",
   "BasePath": "_content/BookRating",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "BookRating\\wwwroot",
+      "Source": "BookRating",
+      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "BasePath": "_content/BookRating",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1b955071-9bde-4a89-a9a5-79d79078be44.jpg",
+      "SourceId": "BookRating",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "BasePath": "_content/BookRating",
+      "RelativePath": "uploads/cover/1b955071-9bde-4a89-a9a5-79d79078be44.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cover\\1b955071-9bde-4a89-a9a5-79d79078be44.jpg"
+    }
+  ]
 }
