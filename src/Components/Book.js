@@ -39,13 +39,13 @@ const Book = ({
         let stars = [];
         for (let i = 1; i <= 5; i++) {
             if (i <= Math.floor(rating)) {
-                // Full star
+                // Full yll
                 stars.push(renderStar(i, "full"));
             } else if (i - 0.5 <= rating) {
-                // Half star
+                // Gjys yll
                 stars.push(renderStar(i, "half"));
             } else {
-                // Empty star
+                // Yll that
                 stars.push(renderStar(i, "empty"));
             }
         }
