@@ -1,4 +1,3 @@
-// RecommendedBook.js
 import React from "react";
 
 const RecommendedBook = ({ title, author, description, cover, rating }) => {
@@ -64,11 +63,19 @@ const RecommendedBook = ({ title, author, description, cover, rating }) => {
         <div className="flex flex-row bg-[#E8E0C6] ml-8 mb-12">
             <div className="flex w-32 h-48 bg-gray-300 drop-shadow-xl m-6 md:mx-12 md:w-48 md:h-64">
                 {/* Image of Cover of Already Reading Book */}
-                <div className="w-32 h-48"> </div>
+                <img
+                    src={cover}
+                    alt="Cover of Book"
+                    className="w-32 h-48 md:w-40 md:h-64"
+                />
             </div>
             <div className="flex flex-col py-4 pr-6">
-                <h1 className="text-[#59461B] text-lg mb-2">{title}</h1>
-                <h1 className="text-[#986F14] text-md mb-2">{author}</h1>
+                <h1 className="text-[#59461B] mb-2 text-xl font-semibold sm:text-2xl">
+                    {title}
+                </h1>
+                <h1 className="text-[#986F14] mb-2 text-md font-semibold sm:text-xl">
+                    {author}
+                </h1>
                 <div class="flex flex-row justify-start">{renderStars()}</div>
                 <h1 className="w-64 text-[#0E0E0C] text-sm mt-2 line-clamp-5 text-wrap">
                     {description}

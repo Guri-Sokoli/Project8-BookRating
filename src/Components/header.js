@@ -15,7 +15,9 @@ const header = () => {
                         md: md:w-full
                         "
                 >
-                    <div className="text-3xl">bR</div>
+                    <div className="text-3xl sm:text-4xl md:text-5xl text-[#59461B]">
+                        bR
+                    </div>
 
                     <div>
                         <div class="mx-auto max-w-md">

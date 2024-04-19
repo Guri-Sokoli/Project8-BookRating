@@ -1,4 +1,3 @@
-// src/Components/ReccomendationSection.js
 import React from "react";
 import RecommendedBook from "./ReccomendedBook";
 

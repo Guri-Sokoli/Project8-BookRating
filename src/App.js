@@ -2,6 +2,8 @@ import Header from "./Components/header.js";
 import LeftOffBook from "./Components/leftOffBook.js";
 import PopularSection from "./Components/popularSectionHome.js";
 import ReccomendationSection from "./Components/ReccomendationSection.js";
+import FooterHome from "./Components/footerHome.js";
+
 const popBooks = [
     {
         title: "Title of Book 1",
@@ -59,26 +61,40 @@ const recBooks = [
         author: "J.K. Rowling",
         description:
             "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
-        cover: "", // We'll leave this empty as per your request
-        rating: 4.5, // Add this line
+        cover: "",
+        rating: 4.5,
     },
     {
         title: "Harry Potter and the Philosopher's Stone",
         author: "J.K. Rowling",
         description:
             "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
-        cover: "", // We'll leave this empty as per your request
-        rating: 4.5, // Add this line
+        cover: "",
+        rating: 4.5,
     },
     {
         title: "Harry Potter and the Philosopher's Stone",
         author: "J.K. Rowling",
         description:
             "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
-        cover: "", // We'll leave this empty as per your request
-        rating: 4.5, // Add this line
+        cover: "",
+        rating: 4.5,
+    },
+    {
+        title: "Harry Potter and the Philosopher's Stone",
+        author: "J.K. Rowling",
+        description:
+            "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
+        cover: "",
+        rating: 4.5,
     },
 ];
+
+const leftOffBook = {
+    bookName: "Title of Book",
+    percentageRead: 50,
+    cover: "",
+};
 
 function App() {
     return (
@@ -92,7 +108,7 @@ function App() {
                 Lorem 20Aute proident ad aliqua fugiat deserunt officia amet
                 adipisicing Lorem aliquip Lorem sunt proident.
             </h1>
-            <LeftOffBook />
+            <LeftOffBook book={leftOffBook} />
 
             <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
                 Popular Now
@@ -103,6 +119,8 @@ function App() {
                 Reccomendation
             </div>
             <ReccomendationSection books={recBooks} />
+
+            <FooterHome />
         </div>
     );
 }
