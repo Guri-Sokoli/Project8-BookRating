@@ -12,6 +12,10 @@ namespace BookRating.Models
         public required int PublicationYear { get; set; }
         public required string CoverLink { get; set; }
         public required string Author { get; set; }
+        public double RateAvg { get; set; }
+
+        [Required]
+        public string? ISBN { get; set; }
 
         public int CategoryId { get; set; }
         public Category? Category { get; set; }

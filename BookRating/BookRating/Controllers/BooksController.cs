@@ -42,6 +42,8 @@ namespace BookRating.Controllers
                 CoverLink = b.CoverLink,
                 Author = b.Author,
                 CategoryId = b.CategoryId,
+                ISBN = b.ISBN,
+                RateAvg = b.RateAvg,
                 Category = b.Category != null ? b.Category.Name : null
             }).ToList();
 
@@ -51,7 +53,7 @@ namespace BookRating.Controllers
 
         //Return book by ID
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBookById(int id)
+        public async Task<IActionResult> GetBookById([FromQuery]int id)
         {
             BookResponseDto bookDto;
             var books = await _context.Books
@@ -78,6 +80,8 @@ namespace BookRating.Controllers
                     CoverLink = bookById.CoverLink,
                     Author = bookById.Author,
                     CategoryId = bookById.CategoryId,
+                    ISBN = bookById.ISBN,
+                    RateAvg = bookById.RateAvg, 
                     Category = bookById.Category != null ? bookById.Category.Name : null
 
                 };
@@ -113,6 +117,7 @@ namespace BookRating.Controllers
                 Description = request.Description,
                 PublicationYear = request.PublicationYear,
                 CategoryId = request.CategoryId,
+                ISBN = request.ISBN,  
                 CoverLink = "//////",
                 Author = request.Author,
 

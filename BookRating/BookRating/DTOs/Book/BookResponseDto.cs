@@ -1,4 +1,5 @@
 ﻿using BookRating.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookRating.DTOs.Book
 {
@@ -10,6 +11,8 @@ namespace BookRating.DTOs.Book
         public required int PublicationYear { get; set; }
         public required string CoverLink { get; set; }
         public required string Author { get; set; }
+        public double RateAvg { get; set; } = 0;
+        public string? ISBN { get; set; }
 
         public int CategoryId { get; set; }
         public string? Category { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace BookRating.DTOs.Book
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BookRating.DTOs.Book
 {
     public class BookRequestDto
     {
@@ -8,6 +10,8 @@
         public required int PublicationYear { get; set; }
         public required string Author { get; set; }
         public required IFormFile CoverImage { get; set; }
+        
+        public string? ISBN { get; set; }
 
         public int CategoryId { get; set; } = 1;
     }

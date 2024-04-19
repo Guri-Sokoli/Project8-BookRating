@@ -4,6 +4,7 @@ using BookRating.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookRating.Migrations
 {
     [DbContext(typeof(BookRatingDbContext))]
-    partial class BookRatingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240419002607_AddNewBookProperties")]
+    partial class AddNewBookProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -146,32 +149,6 @@ namespace BookRating.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("BookRating.Models.UserBook", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserBooks");
-                });
-
             modelBuilder.Entity("BookRating.Models.Book", b =>
                 {
                     b.HasOne("BookRating.Models.Category", "Category")
@@ -184,25 +161,6 @@ namespace BookRating.Migrations
                 });
 
             modelBuilder.Entity("BookRating.Models.Review", b =>
-                {
-                    b.HasOne("BookRating.Models.Book", "Book")
-                        .WithMany()
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BookRating.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Book");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("BookRating.Models.UserBook", b =>
                 {
                     b.HasOne("BookRating.Models.Book", "Book")
                         .WithMany()
