@@ -1,4 +1,3 @@
-// src/Components/ReccomendationSection.js
 import React from "react";
 import facebookIcon from "../assets/facebook.svg";
 import twitterIcon from "../assets/twitter.svg";

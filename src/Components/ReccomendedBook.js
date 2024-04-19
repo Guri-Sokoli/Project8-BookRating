@@ -1,4 +1,3 @@
-// RecommendedBook.js
 import React from "react";
 
 const RecommendedBook = ({ title, author, description, cover, rating }) => {
