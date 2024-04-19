@@ -1,110 +1,64 @@
-import Header from "./Components/header.js";
-import LeftOffBook from "./Components/leftOffBook.js";
-import PopularSection from "./Components/popularSectionHome.js";
-import ReccomendationSection from "./Components/ReccomendationSection.js";
-const popBooks = [
-    {
-        title: "Title of Book 1",
-        author: "Author of Book 1",
-        initialRating: 2.9,
-        isEditable: true,
-    },
-    {
-        title: "Title of Book 2",
-        author: "Author of Book 2",
-        initialRating: 4.5,
-        isEditable: true,
-    },
-    {
-        title: "Title of Book 3",
-        author: "Author of Book 3",
-        initialRating: 5,
-        isEditable: true,
-    },
-    {
-        title: "Title of Book 4",
-        author: "Author of Book 4",
-        initialRating: 3.4,
-        isEditable: true,
-    },
-    {
-        title: "Title of Book 3",
-        author: "Author of Book 3",
-        initialRating: 5,
-        isEditable: true,
-    },
-    {
-        title: "Title of Book 4",
-        author: "Author of Book 4",
-        initialRating: 3.4,
-        isEditable: true,
-    },
-    {
-        title: "Title of Book 3",
-        author: "Author of Book 3",
-        initialRating: 5,
-        isEditable: true,
-    },
-    {
-        title: "Title of Book 4",
-        author: "Author of Book 4",
-        initialRating: 3.4,
-        isEditable: true,
-    },
-];
+import React from "react";
+import { useState } from "react";
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes,
+    Navigate,
+} from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Signup from "./pages/auth/Signup";
+import Login from "./pages/auth/Login";
+import AuthorSignup from "./pages/auth/AuthorSignup";
+import AuthorLogin from "./pages/auth/AuthorLogin";
+import PrivateRoute from "./Components/PrivateRoute";
+import ProtectedPage from "./pages/ProtectedPage";
 
-const recBooks = [
-    {
-        title: "Harry Potter and the Philosopher's Stone",
-        author: "J.K. Rowling",
-        description:
-            "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
-        cover: "", // We'll leave this empty as per your request
-        rating: 4.5, // Add this line
-    },
-    {
-        title: "Harry Potter and the Philosopher's Stone",
-        author: "J.K. Rowling",
-        description:
-            "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
-        cover: "", // We'll leave this empty as per your request
-        rating: 4.5, // Add this line
-    },
-    {
-        title: "Harry Potter and the Philosopher's Stone",
-        author: "J.K. Rowling",
-        description:
-            "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
-        cover: "", // We'll leave this empty as per your request
-        rating: 4.5, // Add this line
-    },
-];
-
-function App() {
+const App = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     return (
-        <div className="bg-[#FFF7E7]">
-            <Header />
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl text-center text-[#59461B] mt-6">
-                Welcome to BetterReads
-            </h1>
-            <h1 className="text-lg sm:text-xl md:text-2xl text-center my-6 mx-12 text-[#59461B]">
-                Lorem 20Aute proident ad aliqua fugiat deserunt officia amet
-                adipisicing Lorem aliquip Lorem sunt proident.
-            </h1>
-            <LeftOffBook />
-
-            <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
-                Popular Now
-            </div>
-            <PopularSection books={popBooks} />
-
-            <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
-                Reccomendation
-            </div>
-            <ReccomendationSection books={recBooks} />
-        </div>
+        <Router>
+            <Routes>
+                <Route
+                    path="/signup"
+                    element={isLoggedIn ? <Navigate to="/" /> : <Signup />}
+                />
+                <Route
+                    path="/login"
+                    element={isLoggedIn ? <Navigate to="/" /> : <Login />}
+                />
+                <Route
+                    path="/"
+                    element={
+                        <HomePage
+                            isLoggedIn={isLoggedIn}
+                            setIsLoggedIn={setIsLoggedIn}
+                        />
+                    }
+                />
+                <Route
+                    path="/protected"
+                    element={
+                        isLoggedIn ? (
+                            <ProtectedPage />
+                        ) : (
+                            <Navigate to="/signup" />
+                        )
+                    }
+                />
+                <Route
+                    path="/author-signup"
+                    element={
+                        isLoggedIn ? <Navigate to="/" /> : <AuthorSignup />
+                    }
+                />
+                <Route
+                    path="/author-login"
+                    element={isLoggedIn ? <Navigate to="/" /> : <AuthorLogin />}
+                />
+            </Routes>
+        </Router>
     );
-}
+};
 
 export default App;

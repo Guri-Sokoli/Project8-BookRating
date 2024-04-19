@@ -5,7 +5,7 @@ import community from "../assets/community.svg";
 import profile from "../assets/profile.svg";
 import "../index.css";
 
-const header = () => {
+const header = ({ isLoggedIn, setIsLoggedIn }) => {
     return (
         <wrapper className="flex flex-col">
             <header className="md:flex md:flex-row md:items-center md:justify-between">
@@ -15,7 +15,9 @@ const header = () => {
                         md: md:w-full
                         "
                 >
-                    <div className="text-3xl">bR</div>
+                    <div className="text-3xl sm:text-4xl md:text-5xl text-[#59461B]">
+                        bR
+                    </div>
 
                     <div>
                         <div class="mx-auto max-w-md">
@@ -51,8 +53,8 @@ const header = () => {
                     <ul className="flex flex-row justify-around items-center">
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
                             <a
-                                href="#"
                                 className="flex flex-col justify-center items-center sm:text-xl"
+                                onClick={() => window.location.reload()}
                             >
                                 <img
                                     className="w-8 h-8 sm:w-10 sm:h-10"
@@ -63,7 +65,7 @@ const header = () => {
                         </li>
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
                             <a
-                                href="#"
+                                href={isLoggedIn ? "#" : "/signup"}
                                 className="flex flex-col justify-center items-center sm:text-xl"
                             >
                                 <img
@@ -75,7 +77,7 @@ const header = () => {
                         </li>
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
                             <a
-                                href="#"
+                                href={isLoggedIn ? "#" : "/signup"}
                                 className="flex flex-col justify-center items-center sm:text-xl"
                             >
                                 <img
@@ -87,7 +89,7 @@ const header = () => {
                         </li>
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
                             <a
-                                href="#"
+                                href={isLoggedIn ? "#" : "/signup"}
                                 className="flex flex-col justify-center items-center sm:text-xl"
                             >
                                 <img

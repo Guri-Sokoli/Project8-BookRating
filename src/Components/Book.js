@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const Book = ({ title, author, initialRating, isEditable }) => {
+const Book = ({
+    isLoggedIn,
+    setIsLoggedIn,
+    title,
+    author,
+    initialRating,
+    isEditable,
+}) => {
     const [rating, setRating] = useState(0);
     const [showRatingRecorded, setShowRatingRecorded] = useState(false);
 
@@ -18,6 +25,10 @@ const Book = ({ title, author, initialRating, isEditable }) => {
     }, [showRatingRecorded]);
 
     const handleStarClick = (starNumber) => {
+        if (!isLoggedIn) {
+            window.location.href = "/signup";
+            return;
+        }
         if (isEditable && starNumber >= 1 && starNumber <= 5) {
             setRating(starNumber);
             setShowRatingRecorded(true);
@@ -86,11 +97,17 @@ const Book = ({ title, author, initialRating, isEditable }) => {
 
     return (
         <div className="flex flex-col items-center justify-around md:justify-center mx-4 mb-6 overflow-x-hidden">
-            <div className="flex w-32 h-48 bg-gray-300 drop-shadow-xl m-4 md:mx-12 md:w-48 md:h-64">
+            <img
+                className="flex w-32 h-48 bg-gray-300 drop-shadow-xl m-4 md:mx-12 md:w-48 md:h-64"
+                src="https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b"
+                alt="Cover of Already Reading Book"
+            >
                 {/* Image of Cover of Already Reading Book */}
-            </div>
-            <h1>{title}</h1>
-            <h1>{author}</h1>
+            </img>
+            <h1 className="text-xl font-semibold sm:text-2xl md:text-3xl">
+                {title}
+            </h1>
+            <h1 className="text-md sm:text-lg md:text-xl">{author}</h1>
             <div class="flex justify-center">{renderStars()}</div>
             <div
                 className={`animate-fade-in-out duration-100 ${
