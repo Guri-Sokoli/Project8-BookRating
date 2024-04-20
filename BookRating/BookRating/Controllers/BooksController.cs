@@ -41,7 +41,6 @@ namespace BookRating.Controllers
                 PublicationYear = b.PublicationYear,
                 CoverLink = b.CoverLink,
                 Author = b.Author,
-                CategoryId = b.CategoryId,
                 ISBN = b.ISBN,
                 RateAvg = b.RateAvg,
                 Category = b.Category != null ? b.Category.Name : null
@@ -79,7 +78,7 @@ namespace BookRating.Controllers
                     PublicationYear = bookById.PublicationYear,
                     CoverLink = bookById.CoverLink,
                     Author = bookById.Author,
-                    CategoryId = bookById.CategoryId,
+                   
                     ISBN = bookById.ISBN,
                     RateAvg = bookById.RateAvg, 
                     Category = bookById.Category != null ? bookById.Category.Name : null

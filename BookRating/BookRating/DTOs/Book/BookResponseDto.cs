@@ -13,8 +13,6 @@ namespace BookRating.DTOs.Book
         public required string Author { get; set; }
         public double RateAvg { get; set; } = 0;
         public string? ISBN { get; set; }
-
-        public int CategoryId { get; set; }
         public string? Category { get; set; }
     }
 }
