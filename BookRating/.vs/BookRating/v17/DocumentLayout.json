@@ -1,30 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\",
+  "WorkspaceRootPath": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend-projectsecond\\backend-project\\project8-bookrating\\bookrating\\bookrating\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend-projectsecond\\backend-project\\project8-bookrating\\bookrating\\bookrating\\models\\userbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\userbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend-projectsecond\\backend-project\\project8-bookrating\\bookrating\\bookrating\\controllers\\userbookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\controllers\\userbookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend-projectsecond\\backend-project\\project8-bookrating\\bookrating\\bookrating\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend-projectsecond\\backend-project\\project8-bookrating\\bookrating\\bookrating\\dtos\\category\\categoryrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend-project\\project8-bookrating\\bookrating\\bookrating\\dtos\\category\\categoryrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\dtos\\category\\categoryrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend-projectsecond\\backend-project\\project8-bookrating\\bookrating\\bookrating\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend-project\\project8-bookrating\\bookrating\\bookrating\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\buton\\desktop\\backend-project\\project8-bookrating\\bookrating\\bookrating\\controllers\\userbookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\controllers\\userbookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\Category\\CategoryRequestDto.cs",
+              "RelativeDocumentMoniker": "BookRating\\DTOs\\Category\\CategoryRequestDto.cs",
+              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\Category\\CategoryRequestDto.cs",
+              "RelativeToolTip": "BookRating\\DTOs\\Category\\CategoryRequestDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T01:44:20.35Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -43,73 +44,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserBook.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Models\\UserBook.cs",
-              "RelativeDocumentMoniker": "BookRating\\Models\\UserBook.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Models\\UserBook.cs",
-              "RelativeToolTip": "BookRating\\Models\\UserBook.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T02:13:39.697Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Review.cs",
-              "RelativeDocumentMoniker": "BookRating\\Models\\Review.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Review.cs",
-              "RelativeToolTip": "BookRating\\Models\\Review.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T02:13:02.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "BookRating\\Controllers\\CategoriesController.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "BookRating\\Controllers\\CategoriesController.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAswAkAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T01:47:03.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CategoryRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\Category\\CategoryRequestDto.cs",
-              "RelativeDocumentMoniker": "BookRating\\DTOs\\Category\\CategoryRequestDto.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\DTOs\\Category\\CategoryRequestDto.cs",
-              "RelativeToolTip": "BookRating\\DTOs\\Category\\CategoryRequestDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T01:44:20.35Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "BookRating\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\AuthController.cs",
               "RelativeToolTip": "BookRating\\Controllers\\AuthController.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T01:10:12.885Z"
+              "WhenOpened": "2024-04-20T01:10:12.885Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "UserBooksController.cs",
-              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\UserBooksController.cs",
+              "DocumentMoniker": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\UserBooksController.cs",
               "RelativeDocumentMoniker": "BookRating\\Controllers\\UserBooksController.cs",
-              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\UserBooksController.cs",
+              "ToolTip": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\UserBooksController.cs",
               "RelativeToolTip": "BookRating\\Controllers\\UserBooksController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEIAAAAMAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAYwEIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T01:09:29.687Z"
             }
