@@ -1,8 +1,82 @@
-import Header from "./Components/header.js";
-import LeftOffBook from "./Components/leftOffBook.js";
-import PopularSection from "./Components/popularSectionHome.js";
-import ReccomendationSection from "./Components/ReccomendationSection.js";
-import FooterHome from "./Components/footerHome.js";
+import React from "react";
+import { useState } from "react";
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes,
+    Navigate,
+} from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Signup from "./pages/auth/Signup";
+import Login from "./pages/auth/Login";
+import AuthorSignup from "./pages/auth/AuthorSignup";
+import AuthorLogin from "./pages/auth/AuthorLogin";
+import PrivateRoute from "./Components/PrivateRoute";
+import ProtectedPage from "./pages/ProtectedPage";
+
+const App = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    return (
+        <Router>
+            <Routes>
+                <Route
+                    path="/signup"
+                    element={isLoggedIn ? <Navigate to="/" /> : <Signup />}
+                />
+                <Route
+                    path="/login"
+                    element={isLoggedIn ? <Navigate to="/" /> : <Login />}
+                />
+                <Route
+                    path="/"
+                    element={
+                        <HomePage
+                            isLoggedIn={isLoggedIn}
+                            setIsLoggedIn={setIsLoggedIn}
+                        />
+                    }
+                />
+                <Route
+                    path="/protected"
+                    element={
+                        isLoggedIn ? (
+                            <ProtectedPage />
+                        ) : (
+                            <Navigate to="/signup" />
+                        )
+                    }
+                />
+                <Route
+                    path="/author-signup"
+                    element={
+                        isLoggedIn ? <Navigate to="/" /> : <AuthorSignup />
+                    }
+                />
+                <Route
+                    path="/author-login"
+                    element={isLoggedIn ? <Navigate to="/" /> : <AuthorLogin />}
+                />
+            </Routes>
+        </Router>
+    );
+};
+
+export default App;
+
+{
+    /* 
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import HomePage from "./pages/HomePage.js";
+import Login from "./pages/auth/Login.js";
+import Signup from "./pages/auth/Signup.js";
+import AuthorLogin from "./pages/auth/AuthorLogin.js";
+import AuthorSignup from "./pages/auth/AuthorSignup.js";
+
+import { Navigate } from "react-router-dom";
+
+import ProtectedPage from "../src/pages/ProtectedPage.js";
+import PrivateRoute from "./Components/PrivateRoute.js";
 
 const popBooks = [
     {
@@ -96,33 +170,32 @@ const leftOffBook = {
     cover: "",
 };
 
+const isLoggedIn = false;
+
 function App() {
     return (
-        <div className="bg-[#FFF7E7]">
-            <Header />
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl text-center text-[#59461B] mt-6">
-                Welcome to BetterReads
-            </h1>
-            <h1 className="text-lg sm:text-xl md:text-2xl text-center my-6 mx-12 text-[#59461B]">
-                Lorem 20Aute proident ad aliqua fugiat deserunt officia amet
-                adipisicing Lorem aliquip Lorem sunt proident.
-            </h1>
-            <LeftOffBook book={leftOffBook} />
-
-            <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
-                Popular Now
-            </div>
-            <PopularSection books={popBooks} />
-
-            <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
-                Reccomendation
-            </div>
-            <ReccomendationSection books={recBooks} />
-
-            <FooterHome />
-        </div>
-    );
+        <Router>
+            <Routes>
+                <Route
+                    path="/"
+                    element={<HomePage isLoggedIn={isLoggedIn} />}
+                />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/author-login" element={<AuthorLogin />} />
+                <Route
+                    path="/author-signup"
+                    element={
+                        isLoggedIn ? <Navigate to="/" /> : <AuthorSignup />
+                    }
+                />
+//                <PrivateRoute path="/protected" component={ProtectedPage} /> 
+                </Routes>
+                </Router>
+            );
+        }
+        
+        export default App;
+        
+*/
 }
-
-export default App;

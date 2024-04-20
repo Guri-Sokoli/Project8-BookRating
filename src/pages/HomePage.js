@@ -95,7 +95,6 @@ const leftOffBook = {
     percentageRead: 50,
     cover: "",
 };
-
 function HomePage({ isLoggedIn, setIsLoggedIn }) {
     return (
         <div className="bg-[#FFF7E7]">
