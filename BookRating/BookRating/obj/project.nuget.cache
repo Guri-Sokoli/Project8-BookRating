@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TjjXnDEQoMEY2BBqiHxL2dKwWfwERP8SdQOgatSRtfTn849PgTiukcsUDhlowWFSmtsu6b/qlrJguLiOt3kLZQ==",
+  "dgSpecHash": "fxrDDBcIzQR2ZgEJ4XytcOs4Y/6IVsL6SepOnLSXTyYOXlRb5qD+8TpGX2h3EyReqN8q5fwe54Djga1XZ+HAfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Buton\\Desktop\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
+  "projectFilePath": "C:\\Users\\Buton\\Desktop\\Backend-projectSECOND\\Backend-project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Buton\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Buton\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
