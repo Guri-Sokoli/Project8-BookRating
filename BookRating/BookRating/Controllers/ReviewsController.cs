@@ -47,6 +47,13 @@ namespace BookRating.Controllers
                 return NotFound("Book not found.");
             }
 
+            var existingReview = await _context.Reviews
+                .FirstOrDefaultAsync(r => r.UserId == int.Parse(userId) && r.BookId == bookId);
+            if (existingReview != null)
+            {
+                return Conflict(new { message = "You have already reviewed this book." });
+            }
+
             // Create and save the new review
             var review = new Review
             {
