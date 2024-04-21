@@ -5,6 +5,7 @@ using BookTating.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
@@ -57,7 +58,7 @@ namespace BookRating.Controllers
             // Create and save the new review
             var review = new Review
             {
-                Rating = reviewDto.Rating,
+                Rating = reviewDto.Rating.Value,
                 Comment = reviewDto.Comment,
                 CreatedAt = DateTime.UtcNow,
                 UserId = int.Parse(userId),
@@ -67,7 +68,59 @@ namespace BookRating.Controllers
             _context.Add(review);
             await _context.SaveChangesAsync();
 
-            return Ok(review); // to be returend a 201 SC once the get by id method is implemented
+            return CreatedAtAction(nameof(GetReview), new { id = review.Id }, review);
+        }
+
+        // PUT: api/review/5
+        [HttpPut("{id}")]
+        [Authorize]
+        public async Task<IActionResult> EditReview(int id, [FromBody] ReviewDto modifiedReview)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);  
+            }
+
+            //Retrieve the existing review from the database
+            var review = await _context.Reviews.FindAsync(id);
+            if (review == null)
+            {
+                return NotFound();
+            }
+
+            //Get the current user's ID from the claim
+            //var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+
+            var userIdValue = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            int userId;
+            if (!int.TryParse(userIdValue, out userId))
+            {
+                // Handle the case where userId is not a valid integer or is null
+                return BadRequest("Invalid user ID");
+            }
+
+
+            if (review.UserId != userId)
+            {
+                return Forbid(); // The user is not allowed to edit someone else's review
+            }
+
+            // Update the review properties if they are provided
+            if (modifiedReview.Rating.HasValue)
+            {
+                review.Rating = modifiedReview.Rating.Value;
+            }
+
+            if (modifiedReview.Comment != null)
+            {
+                review.Comment = modifiedReview.Comment;
+            }
+
+            _context.Entry(review).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+                        
         }
 
         // GET: api/Reviews

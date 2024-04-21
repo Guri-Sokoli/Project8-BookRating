@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookRating")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21688170c2ea8fa74feedd2e4c87782c04846396")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7008648f1a71ae83e3600f9fb0830d86c573d78d")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookRating")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookRating")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
