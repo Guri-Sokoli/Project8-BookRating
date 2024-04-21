@@ -1,6 +1,7 @@
 ﻿using BookRating.DataAccess;
 using BookRating.DTOs;
 using BookRating.Models;
+using BookRating.Services;
 using BookTating.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -21,15 +22,15 @@ namespace BookRating.Controllers
     public class AuthController : ControllerBase
     {
         private readonly BookRatingDbContext _context;
-        private readonly IConfiguration _configuration;
-        public AuthController(BookRatingDbContext context, IConfiguration configuration)
+        private readonly TokenService _tokenService;
+        public AuthController(BookRatingDbContext context, TokenService tokenService)
         {
             _context = context;
-            _configuration = configuration;
+            _tokenService = tokenService;
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] UserRegistration newUser)
+        [HttpPost("register/admin")]
+        public async Task<IActionResult> RegisterAdmin([FromBody] UserRegistration newUser)
         {
             if (ModelState.IsValid)
             {
@@ -46,7 +47,36 @@ namespace BookRating.Controllers
                     Username = newUser.Username,
                     Email = newUser.Email,
                     PasswordHash = passwordHash,
-                    //Role = Role.User.ToRoleString()
+                    Role = "Admin"
+                };
+
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+
+                return Ok(user);
+            }
+
+            return BadRequest(ModelState);
+        }
+
+        [HttpPost("register/user")]
+        public async Task<IActionResult> RegisterUser([FromBody] UserRegistration newUser)
+        {
+            if (ModelState.IsValid)
+            {
+                var userExists = await _context.Users.AnyAsync(u => u.Username == newUser.Username);
+                if (userExists)
+                {
+                    return BadRequest(new { message = "Username already exists" });
+                }
+
+                string passwordHash = BCrypt.Net.BCrypt.HashPassword(newUser.Password);
+
+                var user = new User
+                {
+                    Username = newUser.Username,
+                    Email = newUser.Email,
+                    PasswordHash = passwordHash,
                     Role = "User"
                 };
 
@@ -74,11 +104,13 @@ namespace BookRating.Controllers
                     return BadRequest(new { message = "Wrong Password." });
                 }
 
-                string token = CreateToken(userExist);
+                string token = _tokenService.CreateToken(userExist);
                 return Ok(token);
             }
             return BadRequest(ModelState);
         }
+
+
         [HttpGet("details"), Authorize]
         public async Task<IActionResult> GetUserDetails()
         {
@@ -101,32 +133,6 @@ namespace BookRating.Controllers
                 Role = user.Role
             };
             return Ok(userDetails);
-        }
-
-    private string CreateToken(User user)
-        {
-            List<Claim> claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.Role)
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-                _configuration.GetSection("AppSettings:SecretKey").Value!));
-
-            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-
-            var token = new JwtSecurityToken(
-                    claims: claims,
-                    expires: DateTime.Now.AddDays(1),
-                    signingCredentials: credentials
-                    );
-
-            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
-
-            return jwt;
         }
 
     }

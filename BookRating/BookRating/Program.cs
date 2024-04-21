@@ -1,5 +1,6 @@
 using BookRating.DataAccess;
 using BookRating.Models;
+using BookRating.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,7 @@ builder.Logging.AddDebug();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<BookRatingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<TokenService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
