@@ -70,6 +70,46 @@ namespace BookRating.Controllers
             return Ok(review); // to be returend a 201 SC once the get by id method is implemented
         }
 
-       
+        // GET: api/Reviews
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Review>>> GetReviews()
+        {
+            return await _context.Reviews.ToListAsync();
+        }
+
+        // GET: api/Reviews/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Review>> GetReview(int id)
+        {
+            var review = await _context.Reviews.FindAsync(id);
+
+            if (review == null)
+            {
+                return NotFound();
+            }
+
+            return review;
+        }
+
+        // DELETE: api/Reviews/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteReview(int id)
+        {
+            var review = await _context.Reviews.FindAsync(id);
+            if (review == null)
+            {
+                return NotFound();
+            }
+
+            _context.Reviews.Remove(review);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool ReviewExists(int id)
+        {
+            return _context.Reviews.Any(e => e.Id == id);
+        }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hW/rP/KZMg29q2bCIsk/C3PuJdpTRsBykN+P6qgtMVM=",
+  "Hash": "pbQW2ADKwuon3d1XDnC1K8NsZj7rGiH/t/aNhGo+ebM=",
   "Source": "BookRating",
   "BasePath": "_content/BookRating",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "BookRating\\wwwroot",
+      "Name": "BookRating/wwwroot",
       "Source": "BookRating",
-      "ContentRoot": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/",
       "BasePath": "_content/BookRating",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\0256e48f-3f8c-45c4-abf6-c2c70cd34275.jpg",
+      "Identity": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/0256e48f-3f8c-45c4-abf6-c2c70cd34275.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/0256e48f-3f8c-45c4-abf6-c2c70cd34275.jpg",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\cover\\0256e48f-3f8c-45c4-abf6-c2c70cd34275.jpg"
+      "OriginalItemSpec": "wwwroot/uploads/cover/0256e48f-3f8c-45c4-abf6-c2c70cd34275.jpg"
     },
     {
-      "Identity": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1b955071-9bde-4a89-a9a5-79d79078be44.jpg",
+      "Identity": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/1b955071-9bde-4a89-a9a5-79d79078be44.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/1b955071-9bde-4a89-a9a5-79d79078be44.jpg",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\cover\\1b955071-9bde-4a89-a9a5-79d79078be44.jpg"
+      "OriginalItemSpec": "wwwroot/uploads/cover/1b955071-9bde-4a89-a9a5-79d79078be44.jpg"
     },
     {
-      "Identity": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\45a9d57a-30fd-417b-82a0-8cace2f7607a.jpg",
+      "Identity": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/45a9d57a-30fd-417b-82a0-8cace2f7607a.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/45a9d57a-30fd-417b-82a0-8cace2f7607a.jpg",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\cover\\45a9d57a-30fd-417b-82a0-8cace2f7607a.jpg"
+      "OriginalItemSpec": "wwwroot/uploads/cover/45a9d57a-30fd-417b-82a0-8cace2f7607a.jpg"
     },
     {
-      "Identity": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\9e089205-2dc1-4098-ad0d-4297e0fda554.jpg",
+      "Identity": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/9e089205-2dc1-4098-ad0d-4297e0fda554.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/9e089205-2dc1-4098-ad0d-4297e0fda554.jpg",
       "AssetKind": "All",
@@ -90,7 +90,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\cover\\9e089205-2dc1-4098-ad0d-4297e0fda554.jpg"
+      "OriginalItemSpec": "wwwroot/uploads/cover/9e089205-2dc1-4098-ad0d-4297e0fda554.jpg"
     }
   ]
 }
