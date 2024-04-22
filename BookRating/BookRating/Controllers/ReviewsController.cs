@@ -74,9 +74,9 @@ namespace BookRating.Controllers
         [Authorize]
         public async Task<IActionResult> EditReview(int id, [FromBody] ReviewDto modifiedReview)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);  
+                return BadRequest(ModelState);
             }
 
             //Retrieve the existing review from the database
@@ -116,7 +116,7 @@ namespace BookRating.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
-                        
+
         }
 
         // GET: api/reviews/my-reviews
@@ -175,10 +175,10 @@ namespace BookRating.Controllers
                         Rating = r.Rating,
                         Comment = r.Comment,
                         CreatedAt = r.CreatedAt,
-                        User = r.User.Username, 
+                        User = r.User.Username,
                         BookTitle = r.Book.Title,
                         BookAuthor = r.Book.Author,
-                        BookCategory = r.Book.Category.Name, 
+                        BookCategory = r.Book.Category.Name,
                         BookAverageRating = r.Book.RateAvg
                     })
                     .FirstOrDefaultAsync();
@@ -199,6 +199,7 @@ namespace BookRating.Controllers
 
 
         // DELETE: api/Reviews/5
+
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> DeleteReview(int id)
@@ -209,12 +210,25 @@ namespace BookRating.Controllers
                 return NotFound();
             }
 
+            // Extract user ID from the claims
+            var userIdValue = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            int userId;
+            if (!int.TryParse(userIdValue, out userId))
+            {
+                return BadRequest("Invalid user ID");
+            }
+
+            // Check if the review belongs to the current user
+            if (review.UserId != userId)
+            {
+                return Forbid("You are not allowed to delete someone else's review.");
+            }
+
             _context.Reviews.Remove(review);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
-
         private bool ReviewExists(int id)
         {
             return _context.Reviews.Any(e => e.Id == id);
