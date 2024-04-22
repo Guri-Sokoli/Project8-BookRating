@@ -209,6 +209,20 @@ namespace BookRating.Controllers
                 return NotFound();
             }
 
+            // Extract user ID from the claims
+            var userIdValue = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            int userId;
+            if (!int.TryParse(userIdValue, out userId))
+            {
+                return BadRequest("Invalid user ID");
+            }
+
+            // Check if the review belongs to the current user
+            if (review.UserId != userId)
+            {
+                return Forbid();
+            }
+
             _context.Reviews.Remove(review);
             await _context.SaveChangesAsync();
 
