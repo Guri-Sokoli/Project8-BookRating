@@ -53,7 +53,9 @@ namespace BookRating.Controllers
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
 
-                return Ok(user);
+                string token = _tokenService.CreateToken(user);
+
+                return Ok(token);
             }
 
             return BadRequest(ModelState);
@@ -83,7 +85,9 @@ namespace BookRating.Controllers
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
 
-                return Ok(user);
+                string token = _tokenService.CreateToken(user);
+
+                return Ok(token);
             }
 
             return BadRequest(ModelState);
@@ -108,31 +112,6 @@ namespace BookRating.Controllers
                 return Ok(token);
             }
             return BadRequest(ModelState);
-        }
-
-
-        [HttpGet("details"), Authorize]
-        public async Task<IActionResult> GetUserDetails()
-        {
-            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-            if (userIdClaim == null)
-            {
-                return Unauthorized(new { message = "Invalid token." });
-            }
-
-            var user = await _context.Users.FindAsync(int.Parse(userIdClaim.Value));
-            if (user == null)
-            {
-                return NotFound(new { message = "User not found." });
-            }
-
-            var userDetails = new UserDetails
-            {
-                Username = user.Username,
-                Email = user.Email,
-                Role = user.Role
-            };
-            return Ok(userDetails);
         }
 
     }

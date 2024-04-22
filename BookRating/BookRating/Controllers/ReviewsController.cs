@@ -16,12 +16,10 @@ namespace BookRating.Controllers
     public class ReviewsController : ControllerBase
     {
         private readonly BookRatingDbContext _context;
-        //private readonly UserManager<User> _userManager;
 
         public ReviewsController(BookRatingDbContext context)
         {
             _context = context;
-            // _userManager = userManager;
         }
 
         //POST: api/reviews/books/{bookId}
@@ -71,7 +69,7 @@ namespace BookRating.Controllers
             return CreatedAtAction(nameof(GetReview), new { id = review.Id }, review);
         }
 
-        // PUT: api/review/5
+        // PUT: api/reviews/{id}
         [HttpPut("{id}")]
         [Authorize]
         public async Task<IActionResult> EditReview(int id, [FromBody] ReviewDto modifiedReview)
@@ -89,8 +87,6 @@ namespace BookRating.Controllers
             }
 
             //Get the current user's ID from the claim
-            //var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-
             var userIdValue = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             int userId;
             if (!int.TryParse(userIdValue, out userId))
@@ -123,6 +119,37 @@ namespace BookRating.Controllers
                         
         }
 
+        // GET: api/reviews/my-reviews
+        [HttpGet("my-reviews")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<Review>>> GetUserReviews()
+        {
+            var userIdValue = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            int userId;
+            if (!int.TryParse(userIdValue, out userId))
+            {
+                return BadRequest("Invalid user ID");
+            }
+
+            var userReviews = await _context.Reviews
+                .Where(r => r.UserId == userId)
+                .Include(r => r.Book) // Include the Book related to each Review
+                .ThenInclude(b => b.Category) // Include the Category of the Book
+                .Select(r => new
+                {
+                    Rating = r.Rating,
+                    Comment = r.Comment,
+                    CreatedAt = r.CreatedAt,
+                    BookTitle = r.Book.Title,
+                    BookAuthor = r.Book.Author,
+                    BookCategory = r.Book.Category.Name,
+                    BookAverageRating = r.Book.RateAvg
+                })
+                .ToListAsync();
+
+            return Ok(userReviews);
+        }
+
         // GET: api/Reviews
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Review>>> GetReviews()
@@ -130,22 +157,50 @@ namespace BookRating.Controllers
             return await _context.Reviews.ToListAsync();
         }
 
-        // GET: api/Reviews/5
+        // Get api/reviews/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<Review>> GetReview(int id)
+        [Authorize]
+        public async Task<ActionResult<object>> GetReview(int id)
         {
-            var review = await _context.Reviews.FindAsync(id);
-
-            if (review == null)
+            try
             {
-                return NotFound();
-            }
+                var review = await _context.Reviews
+                    .Where(r => r.Id == id)
+                    .Include(r => r.User)
+                    .Include(r => r.Book)
+                    .ThenInclude(b => b.Category)
+                    .Select(r => new
+                    {
+                        ReviewId = r.Id,
+                        Rating = r.Rating,
+                        Comment = r.Comment,
+                        CreatedAt = r.CreatedAt,
+                        User = r.User.Username, 
+                        BookTitle = r.Book.Title,
+                        BookAuthor = r.Book.Author,
+                        BookCategory = r.Book.Category.Name, 
+                        BookAverageRating = r.Book.RateAvg
+                    })
+                    .FirstOrDefaultAsync();
 
-            return review;
+                if (review == null)
+                {
+                    return NotFound("Review not found.");
+                }
+
+                return Ok(review);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception details here to understand what went wrong
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
         }
+
 
         // DELETE: api/Reviews/5
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteReview(int id)
         {
             var review = await _context.Reviews.FindAsync(id);
