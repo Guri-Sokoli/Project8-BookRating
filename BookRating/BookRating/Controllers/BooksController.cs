@@ -203,5 +203,28 @@ namespace BookRating.Controllers
             return Ok("Book deleted sucessfull!");
         }
 
+        // GET: api/books/recommended
+        /*
+        [HttpGet("recommended")]
+        public IActionResult GetRecommendedBooks()
+        {
+            var recommendedBooks = _context.Books
+                .Where(b => b.RateAvg >= 4) // Assuming a rating of 4+ is considered 'recommended'
+                .Select(b => new BookResponseDto
+                {
+                    Title = b.Title,
+                    Description = b.Description,
+                    PublicationYear = b.PublicationYear,
+                    CoverLink = b.CoverLink,
+                    Author = b.Author,
+                    RateAvg = b.RateAvg,
+                    Category = b.Category.Name //this to be modified
+                }).ToList();
+
+            return Ok(recommendedBooks);
+        }
+        */
+        
+
     }
 }

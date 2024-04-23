@@ -1,5 +1,6 @@
 ﻿using BookRating.DataAccess;
 using BookRating.DTOs;
+using BookRating.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,11 +12,11 @@ namespace BookRating.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly BookRatingDbContext _context;
+        private readonly IUserService _userService;
 
-        public UserController(BookRatingDbContext context)
+        public UserController(IUserService userService)
         {
-            _context = context;
+            _userService = userService;
         }
 
         [HttpGet("details"), Authorize]
@@ -27,19 +28,14 @@ namespace BookRating.Controllers
                 return Unauthorized(new { message = "Invalid token." });
             }
 
-            var user = await _context.Users.FindAsync(int.Parse(userIdClaim.Value));
-            if (user == null)
+            var userDetails = await _userService.GetUserDetailsById(userIdClaim.Value);
+            if (userDetails == null)
             {
                 return NotFound(new { message = "User not found." });
             }
 
-            var userDetails = new UserDetails
-            {
-                Username = user.Username,
-                Email = user.Email,
-                Role = user.Role
-            };
             return Ok(userDetails);
         }
     }
+
 }
