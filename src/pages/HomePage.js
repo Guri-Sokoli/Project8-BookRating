@@ -1,8 +1,8 @@
-import Header from "../Components/header.js";
-import LeftOffBook from "../Components/leftOffBook.js";
-import PopularSection from "../Components/popularSectionHome.js";
-import ReccomendationSection from "../Components/ReccomendationSection.js";
-import FooterHome from "../Components/footerHome.js";
+import Header from "../components/Header.js";
+import LastReadBook from "../components/LastReadBook.js";
+import PopularSection from "../components/PopularSectionHome.js";
+import RecommendationSection from "../components/RecommendationSection.js";
+import FooterHome from "../components/FooterHome.js";
 
 const popBooks = [
     {
@@ -90,7 +90,7 @@ const recBooks = [
     },
 ];
 
-const leftOffBook = {
+const lastReadBook = {
     bookName: "Title of Book",
     percentageRead: 50,
     cover: "",
@@ -107,7 +107,7 @@ function HomePage({ isLoggedIn, setIsLoggedIn }) {
                 Lorem 20Aute proident ad aliqua fugiat deserunt officia amet
                 adipisicing Lorem aliquip Lorem sunt proident.
             </h1>
-            {isLoggedIn && <LeftOffBook book={leftOffBook} />}
+            {isLoggedIn && <LastReadBook book={lastReadBook} />}
 
             <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
                 Popular Now
@@ -117,7 +117,7 @@ function HomePage({ isLoggedIn, setIsLoggedIn }) {
             <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
                 Reccomendation
             </div>
-            <ReccomendationSection books={recBooks} />
+            <RecommendationSection books={recBooks} />
 
             <FooterHome />
         </div>

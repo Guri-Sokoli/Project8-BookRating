@@ -11,11 +11,12 @@ import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
 import AuthorSignup from "./pages/auth/AuthorSignup";
 import AuthorLogin from "./pages/auth/AuthorLogin";
-import PrivateRoute from "./Components/PrivateRoute";
+// import PrivateRoute from "./components/PrivateRoute";
 import ProtectedPage from "./pages/ProtectedPage";
+import BookshelfPage from "./pages/BookshelfPage";
 
 const App = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     return (
         <Router>
             <Routes>
@@ -56,15 +57,25 @@ const App = () => {
                     path="/author-login"
                     element={isLoggedIn ? <Navigate to="/" /> : <AuthorLogin />}
                 />
+                <Route
+                    path="/bookshelf"
+                    element={
+                        isLoggedIn ? (
+                            <BookshelfPage />
+                        ) : (
+                            <Navigate to="/bookshelf" />
+                        )
+                    }
+                />
             </Routes>
         </Router>
     );
 };
 
 export default App;
-
+/* 
 {
-    /* 
+    
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage.js";
@@ -164,7 +175,7 @@ const recBooks = [
     },
 ];
 
-const leftOffBook = {
+const LastReadBook = {
     bookName: "Title of Book",
     percentageRead: 50,
     cover: "",
@@ -197,5 +208,6 @@ function App() {
         
         export default App;
         
-*/
+
 }
+*/

@@ -2,7 +2,7 @@ import React from "react";
 import "../index.css";
 import Book from "./Book";
 
-const popularSectionHome = ({ books }) => {
+const PopularSectionHome = ({ books }) => {
     return (
         <div className="flex flex-nowrap scroll-snap-x snap-start no-scrollbar">
             {books.map((book, index) => (
@@ -20,4 +20,4 @@ const popularSectionHome = ({ books }) => {
     );
 };
 
-export default popularSectionHome;
+export default PopularSectionHome;
