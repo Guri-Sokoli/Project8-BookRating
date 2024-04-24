@@ -1,103 +1,69 @@
-﻿using BookRating.DataAccess;
-using BookRating.DTOs.Category;
-using BookRating.Models;
+﻿using BookRating.DTOs.Category;
+using BookRating.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
-namespace BookRating.Controllers
+[ApiController]
+[Route("/api/[controller]")]
+public class CategoriesController : ControllerBase
 {
-    [ApiController]
-    [Route("/api/[controller]")]
-    public class CategoriesController : ControllerBase
+    private readonly ICategoriesService _categoryService;
+
+    public CategoriesController(ICategoriesService categoryService)
     {
-        private BookRatingDbContext _dbContext;
-        private ILogger<CategoriesController> _logger;
+        _categoryService = categoryService;
+    }
 
-        public CategoriesController(BookRatingDbContext dbContext, ILogger<CategoriesController> logger) {
-            _dbContext = dbContext;
-            _logger = logger;
-        }
+    [HttpGet]
+    [Authorize(Roles = "User,Admin")]
+    public async Task<IActionResult> GetCategory()
+    {
+        var categories = await _categoryService.GetAllCategoriesAsync();
+        return Ok(categories);
+    }
 
-        [HttpGet]
-        public async Task<IActionResult> getCategory() {
-
-            var categories = await _dbContext.Categories.ToListAsync();
-
-            return Ok(categories);
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> getCategoryById(int id)
+    [HttpGet("{id}")]
+    [Authorize(Roles = "User,Admin")]
+    public async Task<IActionResult> GetCategoryById(int id)
+    {
+        var category = await _categoryService.GetCategoryByIdAsync(id);
+        if (category == null)
         {
-
-            var category = await _dbContext.Categories.FirstOrDefaultAsync(c => c.Id == id);
-            if (category == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(category);
+            return NotFound("Category not found.");
         }
+        return Ok(category);
+    }
 
-        [HttpPost]
-        public async Task<IActionResult> createCategory([FromBody] CategoryRequestDto category) {
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> CreateCategory([FromBody] CategoryRequestDto category)
+    {
+        var createdCategory = await _categoryService.CreateCategoryAsync(category);
+        return Ok(createdCategory);
+    }
 
-            var categoryObj = new Category
-            {
-                Name = category.Name,
-
-            };
-
-            _dbContext.Categories.Add(categoryObj);
-            _dbContext.SaveChanges();
-
-
-            return Ok(categoryObj);
+    [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UpdateCategory(int id, [FromBody] CategoryRequestDto request)
+    {
+        var updatedCategory = await _categoryService.UpdateCategoryAsync(id, request);
+        if (updatedCategory == null)
+        {
+            return NotFound("That category does not exist!");
         }
-
-        [HttpPut("{id}")]
-
-        public async Task<IActionResult> updateCategory(int id, [FromBody]CategoryRequestDto request) {
-
-            var category = await _dbContext.Categories.FirstOrDefaultAsync(c => c.Id == id);
-            if (category == null)
-            {
-                return NotFound("That category does not exist!");
-            }
-
-            //Update
-            category.Name = request.Name;
-
-            try
-            {
-                _dbContext.Update(category);
-                await _dbContext.SaveChangesAsync();
-                _logger.LogInformation("Updated category with ID {Id}.", id);
-                return Ok(category);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error updating category with ID {Id}.", id);
-                return StatusCode(500, "An error occurred while updating the category.");
-            }
+        return Ok(updatedCategory);
+    }
 
 
-            
+    [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteCategory(int id)
+    {
+        var result = await _categoryService.DeleteCategoryAsync(id);
+        if (result == "Category not found.")
+        {
+            return NotFound(result);
         }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> deleteCategory(int id) {
-
-            var category = _dbContext.Categories.FirstOrDefault(x => x.Id == id);
-            if (category == null) {
-                return NotFound();
-            }
-
-            _dbContext.Categories.Remove(category);
-            _dbContext.SaveChanges();
-
-            return Ok("The category was successfully deleted!");
-        }
-
+        return Ok(result);
     }
 }

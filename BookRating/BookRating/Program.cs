@@ -26,6 +26,10 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
+builder.Services.AddScoped<IBooksService, BooksService>();
+builder.Services.AddScoped<IUserBooksService, UserBooksService>();
+builder.Services.AddScoped<ICategoriesService, CategoriesService>();
+
 builder.Services.AddDbContext<BookRatingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<TokenService>();

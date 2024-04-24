@@ -1,6 +1,8 @@
 ﻿using BookRating.DataAccess;
 using BookRating.DTOs.Book;
 using BookRating.Models;
+using BookRating.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,81 +15,56 @@ namespace BookRating.Controllers
     public class BooksController : ControllerBase
     {
 
-        private readonly BookRatingDbContext _context;
-        private readonly IWebHostEnvironment _environment;
+        private readonly IBooksService _bookService;
         private readonly ILogger<BooksController> _logger;
 
-        public BooksController(BookRatingDbContext bookRatingDbContext, IWebHostEnvironment webHostEnvironment, ILogger<BooksController> logger)
+        public BooksController(IBooksService bookService, ILogger<BooksController> logger)
         {
 
-            _context = bookRatingDbContext;
-            _environment = webHostEnvironment;
+            
             _logger = logger;
+            _bookService = bookService;
         }
 
 
-        //All books are returned
+        /*USE:
+         * Returns all the books
+         */
+        [Authorize(Roles = "User,Admin")]
         [HttpGet]
-        public async Task<IActionResult> GetBook()
+        public async Task<IActionResult> GetBooks()
         {
-            var books = await _context.Books
-                                        .Include(b => b.Category)
-                                        .ToListAsync();
-            var booksDto = books.Select(b => new BookResponseDto
-            {
-                Title = b.Title,
-                PageCount = b.PageCount,
-                Description = b.Description,
-                PublicationYear = b.PublicationYear,
-                CoverLink = b.CoverLink,
-                Author = b.Author,
-                ISBN = b.ISBN,
-                RateAvg = b.RateAvg,
-                Category = b.Category != null ? b.Category.Name : null
-            }).ToList();
+            try {
+                var booksResponse = await _bookService.GetAllBooksAsync();
+                return Ok(booksResponse);
 
-            return Ok(booksDto);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error getting books: {Message}", e.Message);
+                return StatusCode(500, "Internal server error!!! while retrieving books.");
+
+            }
         }
 
 
-        //Return book by ID
+        /*USE:
+         * Returns a book by id
+         */
         [HttpGet("{id}")]
+        [Authorize(Roles = "User,Admin")]
         public async Task<IActionResult> GetBookById([FromQuery]int id)
         {
-            BookResponseDto bookDto;
-            var books = await _context.Books
-                                        .Include(b => b.Category)
-                                        .ToListAsync();
-            if (books == null)
+            try { 
+
+                var bookResponse = await _bookService.GetBookByIdAsync(id);
+                return Ok(bookResponse);
+            
+            }catch (Exception e)
             {
-                return NotFound("The libray is empty");
+                _logger.LogError("Error getting book by ID: {Message}", e.Message);
+                return StatusCode(500, "Internal server error while retrieving the book.");
             }
-
-            var bookById = books.FirstOrDefault(b => b.Id == id);
-            if (bookById == null)
-            {
-                return NotFound("This book does not exist!");
-            }
-            else
-            {
-                bookDto = new BookResponseDto
-                {
-                    Title = bookById.Title,
-                    PageCount = bookById.PageCount,
-                    Description = bookById.Description,
-                    PublicationYear = bookById.PublicationYear,
-                    CoverLink = bookById.CoverLink,
-                    Author = bookById.Author,
-                   
-                    ISBN = bookById.ISBN,
-                    RateAvg = bookById.RateAvg, 
-                    Category = bookById.Category != null ? bookById.Category.Name : null
-
-                };
-
-            }
-
-            return Ok(bookDto);
         }
 
 
@@ -99,69 +76,30 @@ namespace BookRating.Controllers
          */
         //CREATE
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateBook([FromForm] BookRequestDto request)
         {
             if (!ModelState.IsValid)
             {
-                _logger.LogError("CreateBook: Invalid model state!");
                 return BadRequest(ModelState);
             }
 
-            _logger.LogInformation("Creating a new book with title: {Title}", request.Title);
+            var result = await _bookService.CreateBookAsync(request);
+            return Ok(result);
 
-            var book = new Book
-            {
-                Title = request.Title,
-                PageCount = request.PageCount,
-                Description = request.Description,
-                PublicationYear = request.PublicationYear,
-                CategoryId = request.CategoryId,
-                ISBN = request.ISBN,  
-                CoverLink = "//////",
-                Author = request.Author,
-
-            };
-
-            if (request.CoverImage != null && request.CoverImage.Length > 0)
-            {
-
-                var fileName = Guid.NewGuid().ToString() + Path.GetExtension(request.CoverImage.FileName);
-                var directoryPath = Path.Combine(_environment.WebRootPath, "uploads", "cover");
-
-                // Ensure the directory path exists
-                Directory.CreateDirectory(directoryPath);
-
-                var filePath = Path.Combine(directoryPath, fileName);
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await request.CoverImage.CopyToAsync(fileStream);
-                    book.CoverLink = Path.Combine("uploads", "cover", fileName);
-                }
-
-                _logger.LogInformation("Cover image saved to {FilePath}", filePath);
-
-            }
-
-
-            _context.Books.Add(book);
-            await _context.SaveChangesAsync();
-
-            _logger.LogInformation("Book created successfully with ID: {BookId}", book.Id);
-
-
-            return Ok("The book is created successfully.");
         }
 
 
 
         //TODO
+        /*
         [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, [FromForm] BookRequestDto request)
         {
 
             return Ok();
         }
+        */
 
 
 
@@ -171,36 +109,22 @@ namespace BookRating.Controllers
          *
          */
         [HttpDelete("{id}")]
-        public IActionResult DeleteBook(int id)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteBook(int id)
         {
 
-            var book = _context.Books.FirstOrDefault(x => x.Id == id);
-            if (book == null)
-            {
-                return NotFound("This book does not exist!");
+            try {
+                
+                
+                var result = await _bookService.DeleteBookAsync(id);
+                return Ok(result);
+
             }
-
-            var filePath = Path.Combine(_environment.WebRootPath, book.CoverLink);
-            if (System.IO.File.Exists(filePath))
+            catch (Exception e)
             {
-                try
-                {
-                    System.IO.File.Delete(filePath);
-
-                }
-                catch (Exception e)
-                {
-                    _logger.LogError("Error deleting file: {FilePath}. Exception: {ExceptionMessage}", filePath, e.Message);
-                    return StatusCode(StatusCodes.Status500InternalServerError, "Error deleting associated file.");
-                }
+                _logger.LogError("Error deleting book: {Message}", e.Message);
+                return StatusCode(500, "Internal server error while deleting the book.");
             }
-
-
-            _context.Books.Remove(book);
-            _context.SaveChanges();
-
-
-            return Ok("Book deleted sucessfull!");
         }
 
         // GET: api/books/recommended

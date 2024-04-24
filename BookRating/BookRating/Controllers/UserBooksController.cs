@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using BookRating.DTOs;
+using BookRating.Services.Interfaces;
 
 namespace BookRating.Controllers
 {
@@ -15,88 +16,60 @@ namespace BookRating.Controllers
     {
 
 
-        private BookRatingDbContext _context;
+        private readonly IUserBooksService _userBookService;
+        private readonly ILogger<UserBooksController> _logger;
 
-        public UserBooksController(BookRatingDbContext bookRatingDbContext) { 
-            
-            _context = bookRatingDbContext;
+        public UserBooksController(IUserBooksService userBookService, ILogger<UserBooksController> logger)
+        {
+            _userBookService = userBookService;
+            _logger = logger;
         }
 
         [HttpPost("Add")]
         [Authorize(Roles = "User,Admin")]
         public async Task<IActionResult> AddBookToCollection([FromBody] int bookId)
         {
-            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            if (string.IsNullOrEmpty(userId))
+            var userId = User.Claims.FirstOrDefault(c => c.Type is ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId) || !int.TryParse(userId, out int userIdInt))
             {
+                _logger.LogWarning("User ID is invalid or not authenticated.");
                 return Unauthorized("User is not authenticated.");
             }
 
-            if (_context.UserBooks.Any(ub => ub.UserId == int.Parse(userId) && ub.BookId == bookId))
+            try
             {
-                return BadRequest("Book already added to your collection.");
+                var result = await _userBookService.AddBookToCollectionAsync(userIdInt, bookId);
+                return result.Contains("successfully") ? Ok(result) : BadRequest(result);
             }
-
-            if (!int.TryParse(userId, out int userIdInt))
+            catch (Exception e)
             {
-                return BadRequest("Invalid user ID.");
+                _logger.LogError(e, "Failed to add book {BookId} to user {UserId} collection.", bookId, userIdInt);
+                return StatusCode(500, "Internal server error while adding the book.");
             }
-
-            var userBook = new UserBook
-            {
-                UserId = userIdInt,
-                BookId = bookId,
-                DateCreated = DateTime.UtcNow
-            };
-
-            _context.UserBooks.Add(userBook);
-            await _context.SaveChangesAsync();
-
-            return Ok("Book added to your collection successfully.");
         }
 
-
-
-
-
-        // GET: api/UserBooks/MyBooks
         [HttpGet("MyBooks")]
         [Authorize(Roles = "User,Admin")]
         public async Task<ActionResult> GetMyBooks()
         {
-            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            if (string.IsNullOrEmpty(userId))
+            var userId = User.Claims.FirstOrDefault(c => c.Type is ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId) || !int.TryParse(userId, out int userIdInt))
             {
+                _logger.LogWarning("User ID is invalid or not authenticated.");
                 return Unauthorized("User is not authenticated.");
             }
 
-            var books = await _context.UserBooks
-                .Where(ub => ub.UserId == int.Parse(userId))
-                .Include(ub => ub.Book)
-                .ThenInclude(b => b.Category)
-                .Select(ub => ub.Book)
-                .ToListAsync();
-
-            var booksDto = books.Select(b => new BookResponseDto
+            try
             {
-                Title = b.Title,
-                PageCount = b.PageCount,
-                Description = b.Description,
-                PublicationYear = b.PublicationYear,
-                CoverLink = b.CoverLink,
-                Author = b.Author,
-                RateAvg = b.RateAvg,
-                ISBN = b.ISBN,
-                Category = (b.Category != null) ? b.Category.Name : null
-
-
-
-            }).ToList();
-
-            return Ok(booksDto);
+                var booksDto = await _userBookService.GetMyBooksAsync(userIdInt);
+                return Ok(booksDto);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Failed to retrieve books for user {UserId}.", userIdInt);
+                return StatusCode(500, "Internal server error while retrieving books.");
+            }
         }
-
-
-
     }
+
 }

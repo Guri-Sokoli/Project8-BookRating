@@ -1,20 +1,20 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\0256e48f-3f8c-45c4-abf6-c2c70cd34275.jpg",
-      "PackagePath": "staticwebassets\\uploads\\cover\\0256e48f-3f8c-45c4-abf6-c2c70cd34275.jpg"
+      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg"
     },
     {
-      "Id": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1b955071-9bde-4a89-a9a5-79d79078be44.jpg",
-      "PackagePath": "staticwebassets\\uploads\\cover\\1b955071-9bde-4a89-a9a5-79d79078be44.jpg"
+      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\341358f3-ad3d-476e-acc8-0de93a8ea56c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cover\\341358f3-ad3d-476e-acc8-0de93a8ea56c.jpg"
     },
     {
-      "Id": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\45a9d57a-30fd-417b-82a0-8cace2f7607a.jpg",
-      "PackagePath": "staticwebassets\\uploads\\cover\\45a9d57a-30fd-417b-82a0-8cace2f7607a.jpg"
+      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg"
     },
     {
-      "Id": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\9e089205-2dc1-4098-ad0d-4297e0fda554.jpg",
-      "PackagePath": "staticwebassets\\uploads\\cover\\9e089205-2dc1-4098-ad0d-4297e0fda554.jpg"
+      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BookRating.Microsoft.AspNetCore.StaticWebAssets.props",
