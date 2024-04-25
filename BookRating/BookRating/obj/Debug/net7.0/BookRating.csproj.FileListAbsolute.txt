@@ -516,7 +516,6 @@ C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating\BookRa
 C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\BookRating.csproj.CoreCompileInputs.cache
 C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\BookRating.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\BookRating.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\BookRating.sourcelink.json
 C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\staticwebassets\msbuild.BookRating.Microsoft.AspNetCore.StaticWebAssets.props
