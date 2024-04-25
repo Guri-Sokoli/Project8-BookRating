@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hwlQMhnEMsfi8od2yGT5Fvyu2NmsUUnyt9bD7PkyF8w=",
+  "Hash": "4a8qO1ZVfeB3T3rDT+6xNe85zqIHRkfgvd8NLCrMBaE=",
   "Source": "BookRating",
   "BasePath": "_content/BookRating",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "BookRating\\wwwroot",
+      "Name": "BookRating/wwwroot",
       "Source": "BookRating",
-      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/",
       "BasePath": "_content/BookRating",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
+      "Identity": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
       "AssetKind": "All",
@@ -33,32 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg"
+      "OriginalItemSpec": "wwwroot/uploads/cover/1a6fe208-5739-4063-8733-d6031aa47ad7.jpg"
     },
     {
-      "Identity": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\341358f3-ad3d-476e-acc8-0de93a8ea56c.jpg",
+      "Identity": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
-      "BasePath": "_content/BookRating",
-      "RelativePath": "uploads/cover/341358f3-ad3d-476e-acc8-0de93a8ea56c.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\cover\\341358f3-ad3d-476e-acc8-0de93a8ea56c.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
-      "SourceId": "BookRating",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
       "AssetKind": "All",
@@ -71,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg"
+      "OriginalItemSpec": "wwwroot/uploads/cover/3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg"
     },
     {
-      "Identity": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
+      "Identity": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
       "AssetKind": "All",
@@ -90,7 +71,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg"
+      "OriginalItemSpec": "wwwroot/uploads/cover/fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg"
     }
   ]
 }

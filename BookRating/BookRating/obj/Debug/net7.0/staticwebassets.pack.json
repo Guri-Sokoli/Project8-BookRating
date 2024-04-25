@@ -1,35 +1,31 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
-      "PackagePath": "staticwebassets\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg"
+      "Id": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
+      "PackagePath": "staticwebassets/uploads/cover/1a6fe208-5739-4063-8733-d6031aa47ad7.jpg"
     },
     {
-      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\341358f3-ad3d-476e-acc8-0de93a8ea56c.jpg",
-      "PackagePath": "staticwebassets\\uploads\\cover\\341358f3-ad3d-476e-acc8-0de93a8ea56c.jpg"
+      "Id": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
+      "PackagePath": "staticwebassets/uploads/cover/3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg"
     },
     {
-      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
-      "PackagePath": "staticwebassets\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg"
+      "Id": "/Users/oltimeri/Desktop/Life/Project8_BookRating/BookRating/BookRating/wwwroot/uploads/cover/fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
+      "PackagePath": "staticwebassets/uploads/cover/fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg"
     },
     {
-      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
-      "PackagePath": "staticwebassets\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg"
-    },
-    {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BookRating.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.BookRating.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.BookRating.props",
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.BookRating.props",
       "PackagePath": "build\\BookRating.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.BookRating.props",
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.BookRating.props",
       "PackagePath": "buildMultiTargeting\\BookRating.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.BookRating.props",
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.BookRating.props",
       "PackagePath": "buildTransitive\\BookRating.props"
     }
   ],
