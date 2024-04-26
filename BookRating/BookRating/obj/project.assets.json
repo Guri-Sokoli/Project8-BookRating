@@ -4117,11 +4117,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
+      "projectUniqueName": "C:\\Users\\Buton\\Desktop\\Projekti\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
       "projectName": "BookRating",
-      "projectPath": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
+      "projectPath": "C:\\Users\\Buton\\Desktop\\Projekti\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
       "packagesPath": "C:\\Users\\Buton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\obj\\",
+      "outputPath": "C:\\Users\\Buton\\Desktop\\Projekti\\Project8-BookRating\\BookRating\\BookRating\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Buton\\AppData\\Roaming\\NuGet\\NuGet.Config",
