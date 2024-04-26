@@ -37,6 +37,7 @@ namespace BookRating.Services.Implementations
 
             _context.Add(review);
             await _context.SaveChangesAsync();
+            await UpdateBookRateAvgAsync(bookId);
             return review;
         }
 
@@ -54,6 +55,7 @@ namespace BookRating.Services.Implementations
 
             _context.Entry(review).State = EntityState.Modified;
             await _context.SaveChangesAsync();
+
             return review;
         }
 
@@ -118,6 +120,28 @@ namespace BookRating.Services.Implementations
                 throw new InvalidOperationException("You cannot delete someone else's review.");
 
             _context.Reviews.Remove(review);
+            await _context.SaveChangesAsync();
+        }
+
+
+
+        //HELPER METHOD
+        public async Task UpdateBookRateAvgAsync(int bookId)
+        {
+
+            var book = await _context.Books.FirstOrDefaultAsync(b => b.Id == bookId);
+            if (book == null) return;
+
+            // Calculate the average rating from the Reviews table separately
+            var averageRating = await _context.Reviews
+                .Where(r => r.BookId == bookId)
+                .AverageAsync(r => (double?)r.Rating);
+
+            // If there are no reviews, set the average rating to 0
+            book.RateAvg = averageRating ?? 0;
+
+            // Mark the book as modified and save the changes
+            _context.Books.Update(book);
             await _context.SaveChangesAsync();
         }
     }

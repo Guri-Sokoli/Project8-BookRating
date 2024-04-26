@@ -30,7 +30,7 @@ namespace BookRating.Controllers
         /*USE:
          * Returns all the books
          */
-        [Authorize(Roles = "User,Admin")]
+        
         [HttpGet]
         public async Task<IActionResult> GetBooks()
         {
@@ -52,7 +52,6 @@ namespace BookRating.Controllers
          * Returns a book by id
          */
         [HttpGet("{id}")]
-        [Authorize(Roles = "User,Admin")]
         public async Task<IActionResult> GetBookById([FromQuery]int id)
         {
             try { 

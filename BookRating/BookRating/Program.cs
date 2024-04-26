@@ -14,6 +14,18 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+//M-CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CustomCorsPolicy", policy =>
+    {
+        policy.SetIsOriginAllowed(origin => true)  // Allow all origins
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 //M- Configure logging
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
@@ -78,6 +90,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+
+//M-CORS
+app.UseCors("CustomCorsPolicy");
 
 
 //M- enable static files
