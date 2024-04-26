@@ -16,8 +16,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating\BookRating:/app
-      - C:\Users\Buton\Desktop\Backend-projectMAIN\Project8-BookRating\BookRating:/src
+      - C:\Users\Buton\Desktop\Backend\BookRatingServer\BookRating\BookRating:/app
+      - C:\Users\Buton\Desktop\Backend\BookRatingServer\BookRating:/src
       - C:\Users\Buton\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\Buton\.nuget\packages\:/.nuget/packages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
