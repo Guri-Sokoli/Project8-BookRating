@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\models\\test1.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\models\\test1.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|c:\\users\\gresa\\onedrive\\desktop\\project\\project8-bookrating\\bookrating\\bookrating\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{C8FEA411-AE55-4902-B397-644D88417915}|BookRating\\BookRating.csproj|solutionrelative:bookrating\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -99,19 +95,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "test1.txt",
-              "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\test1.txt",
-              "RelativeDocumentMoniker": "BookRating\\Models\\test1.txt",
-              "ToolTip": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\test1.txt",
-              "RelativeToolTip": "BookRating\\Models\\test1.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-04-26T23:37:36.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\appsettings.json",
               "RelativeDocumentMoniker": "BookRating\\appsettings.json",
@@ -124,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "lol.txt",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\lol.txt",
               "RelativeDocumentMoniker": "BookRating\\Controllers\\lol.txt",
@@ -136,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "BookRating\\Controllers\\UserController.cs",
@@ -148,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "BooksController.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\BooksController.cs",
               "RelativeDocumentMoniker": "BookRating\\Controllers\\BooksController.cs",
@@ -160,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "BookRating\\Controllers\\CategoriesController.cs",
@@ -172,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "BooksService.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Services\\Implementations\\BooksService.cs",
               "RelativeDocumentMoniker": "BookRating\\Services\\Implementations\\BooksService.cs",
@@ -184,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "ReviewService.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Services\\Implementations\\ReviewService.cs",
               "RelativeDocumentMoniker": "BookRating\\Services\\Implementations\\ReviewService.cs",
@@ -196,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "UserBooksController.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\UserBooksController.cs",
               "RelativeDocumentMoniker": "BookRating\\Controllers\\UserBooksController.cs",
@@ -208,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "ReviewsController.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Controllers\\ReviewsController.cs",
               "RelativeDocumentMoniker": "BookRating\\Controllers\\ReviewsController.cs",
@@ -220,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "CategoriesService.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Services\\Implementations\\CategoriesService.cs",
               "RelativeDocumentMoniker": "BookRating\\Services\\Implementations\\CategoriesService.cs",
@@ -232,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Review.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\Review.cs",
@@ -244,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Models\\Book.cs",
               "RelativeDocumentMoniker": "BookRating\\Models\\Book.cs",
@@ -256,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Services\\Implementations\\UserService.cs",
               "RelativeDocumentMoniker": "BookRating\\Services\\Implementations\\UserService.cs",
@@ -268,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Services\\Implementations\\TokenService.cs",
               "RelativeDocumentMoniker": "BookRating\\Services\\Implementations\\TokenService.cs",
@@ -280,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "UserBooksService.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Services\\Implementations\\UserBooksService.cs",
               "RelativeDocumentMoniker": "BookRating\\Services\\Implementations\\UserBooksService.cs",
@@ -292,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Services\\Implementations\\AuthService.cs",
               "RelativeDocumentMoniker": "BookRating\\Services\\Implementations\\AuthService.cs",
@@ -304,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Program.cs",
               "RelativeDocumentMoniker": "BookRating\\Program.cs",
@@ -316,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "BookRating\\Properties\\launchSettings.json",
