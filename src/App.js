@@ -18,6 +18,7 @@ import BookshelfPage from "./pages/BookshelfPage";
 import BookPage from "./pages/BookPage.js";
 
 import ProfilePage from "./pages/ProfilePage";
+import AdminPage from "./pages/AdminPage.js";
 
 // Inside your Router component
 
@@ -75,6 +76,7 @@ const App = () => {
                     }
                 />
                 <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/admin" element={<AdminPage />} />
                 <Route path="/book/:bookId" element={<BookPage isLoggedIn />} />
             </Routes>
         </Router>
