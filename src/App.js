@@ -12,6 +12,7 @@ import Login from "./pages/auth/Login";
 import AuthorSignup from "./pages/auth/AuthorSignup";
 import AuthorLogin from "./pages/auth/AuthorLogin";
 // import PrivateRoute from "./components/PrivateRoute";
+// import PrivateRoute from "./components/PrivateRoute";
 import ProtectedPage from "./pages/ProtectedPage";
 import BookshelfPage from "./pages/BookshelfPage";
 import BookPage from "./pages/BookPage.js";
