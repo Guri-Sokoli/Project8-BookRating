@@ -36,7 +36,7 @@ const FooterHome = () => {
                 </h1>
                 <ul className="flex flex-row justify-between">
                     <li className="mx-0.5 sm:mx-2">
-                        <a href="#">
+                        <a href="https://www.facebook.com">
                             <img
                                 src={facebookIcon}
                                 alt="Facebook"
@@ -48,7 +48,7 @@ const FooterHome = () => {
                         <img src={twitterIcon} alt="Twitter" className="h-6" />
                     </li>
                     <li className="mx-0.5 sm:mx-2">
-                        <a href="#">
+                        <a href="https://www.instagram.com">
                             <img
                                 src={instagramIcon}
                                 alt="Instagram"
@@ -57,7 +57,7 @@ const FooterHome = () => {
                         </a>
                     </li>
                     <li className="mx-0.5 sm:mx-2">
-                        <a href="#">
+                        <a href="https://www.linkedin.com">
                             <img
                                 src={linkedinIcon}
                                 alt="LinkedIn"

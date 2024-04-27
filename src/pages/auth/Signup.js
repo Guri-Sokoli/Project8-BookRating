@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import home from "../../assets/home.svg";
+import axios from "axios";
+// import home from "../../assets/home.svg";
 
 const Signup = () => {
     const [formData, setFormData] = useState({ username: "", password: "" });
+    const [displayMessage, setDisplayMessage] = useState(""); // Add this line
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -11,8 +13,54 @@ const Signup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Send request n'backend...
+        try {
+            const response = await axios.post(
+                "http://localhost:5108/api/Auth/register/user",
+                formData,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+            if (!response.ok) {
+                const errorData = await response.json();
+                if (errorData.errors) {
+                    if (errorData.errors.Email) {
+                        // Display email error
+                        setDisplayMessage(errorData.errors.Email[0]);
+                    }
+                    if (errorData.errors.Password) {
+                        // Display password error
+                        setDisplayMessage(errorData.errors.Password[0]);
+                    }
+                }
+            } else {
+                // Handle successful signup, e.g. by redirecting to login page
+                console.log("User was created successfully");
+                setDisplayMessage("User was created successfully");
+            }
+        } catch (error) {
+            console.error("Error during signup:", error);
+            setDisplayMessage("An error occurred");
+        }
     };
+
+    //         if (response.data.newUser) {
+    //             setDisplayMessage("A new user was created"); // Add this line
+    //         } else {
+    //             setDisplayMessage("User already existed"); // Add this line
+    //         }
+    //     } catch (error) {
+    //         if (error.response && error.response.status === 400) {
+    //             // Handle 400 error. If the error response has a message, display it
+    //             const errorMessage = error.response.data.errors.Password[0];
+    //             setDisplayMessage(errorMessage); // Display the error message to the user
+    //         } else {
+    //             setDisplayMessage("An error occurred"); // Add this line
+    //         }
+    //     }
+    // };
 
     return (
         <div className="flex flex-col justify- items-center bg-[#59461B] w-screen h-screen">
@@ -64,13 +112,13 @@ const Signup = () => {
                 </div>
                 <div className="flex flex-col  text-[#59461B]">
                     <label
-                        htmlFor="username"
+                        htmlFor="email"
                         className="text-lg pt-2 pb-1 font-semibold"
                     >
-                        Username
+                        email
                     </label>
                     <input
-                        name="username"
+                        name="email"
                         onChange={handleChange}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
                     />
@@ -83,12 +131,14 @@ const Signup = () => {
                         Password
                     </label>
                     <input
-                        type="password"
+                        type=""
                         name="password"
                         onChange={handleChange}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
                     />
                 </div>
+
+                <p style={{ color: "green" }}>{displayMessage}</p>
 
                 <button
                     type="submit"

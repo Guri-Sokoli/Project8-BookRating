@@ -5,6 +5,8 @@ import community from "../assets/community.svg";
 import profile from "../assets/profile.svg";
 import "../index.css";
 
+import { Link } from "react-router-dom";
+
 const header = ({ isLoggedIn, setIsLoggedIn }) => {
     return (
         <wrapper className="flex flex-col">
@@ -52,52 +54,56 @@ const header = ({ isLoggedIn, setIsLoggedIn }) => {
                 <div className="py-4 md:w-full">
                     <ul className="flex flex-row justify-around items-center">
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
-                            <a
+                            <Link
+                                to="/"
                                 className="flex flex-col justify-center items-center sm:text-xl"
-                                onClick={() => window.location.reload()}
                             >
                                 <img
                                     className="w-8 h-8 sm:w-10 sm:h-10"
                                     src={home}
+                                    alt="Home Icon"
                                 />
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
-                            <a
-                                href={isLoggedIn ? "#" : "/signup"}
+                            <Link
+                                to={isLoggedIn ? "/bookshelf" : "/signup"}
                                 className="flex flex-col justify-center items-center sm:text-xl"
                             >
                                 <img
                                     className="w-8 h-8 sm:w-10 sm:h-10"
                                     src={book}
+                                    alt="Bookshelf Icon"
                                 />
                                 Bookshelf
-                            </a>
+                            </Link>
                         </li>
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
-                            <a
-                                href={isLoggedIn ? "#" : "/signup"}
+                            <Link
+                                to={isLoggedIn ? "/community" : "/signup"}
                                 className="flex flex-col justify-center items-center sm:text-xl"
                             >
                                 <img
                                     className="w-8 h-8 sm:w-10 sm:h-10"
                                     src={community}
+                                    alt="Community Icon"
                                 />
                                 Community
-                            </a>
+                            </Link>
                         </li>
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
-                            <a
-                                href={isLoggedIn ? "#" : "/signup"}
+                            <Link
+                                to={isLoggedIn ? "/profile" : "/signup"}
                                 className="flex flex-col justify-center items-center sm:text-xl"
                             >
                                 <img
                                     className="w-8 h-8 sm:w-10 sm:h-10"
                                     src={profile}
+                                    alt="Profile Icon"
                                 />
                                 Profile
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

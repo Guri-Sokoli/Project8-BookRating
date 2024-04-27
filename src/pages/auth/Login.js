@@ -11,7 +11,28 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Send request n'backend...
+        const response = await fetch(
+            process.env.REACT_APP_BACKEND_URL + "/login",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            }
+        );
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.newUser) {
+                console.log("A new user was created");
+            } else {
+                console.log("User already existed");
+            }
+            // Handle successful login, e.g. by setting user data in state
+        } else {
+            // Handle error, e.g. by showing a message to the user
+        }
     };
 
     return (

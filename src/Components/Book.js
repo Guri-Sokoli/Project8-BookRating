@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Book = ({
     isLoggedIn,
     setIsLoggedIn,
+    id,
     title,
     author,
     initialRating,
@@ -72,9 +74,7 @@ const Book = ({
                     isEditable ? "#FCB500" : "#BAB6AE"
                 }] hover:fill-[${
                     isEditable ? "#FCB500" : "#BAB6AE"
-                }] w-8 h-8 md:w-10 md:h-10 mx-1 cursor-${
-                    isEditable ? "pointer" : "default"
-                }`}
+                }] w-8 h-8 md:w-10 md:h-10 mx-1 cursor-defualt`}
                 viewBox="0 0 24 24"
                 stroke="none"
                 aria-label={`Star ${i}`}
@@ -96,31 +96,40 @@ const Book = ({
     };
 
     return (
-        <div className="flex flex-col items-center justify-around md:justify-center mx-4 mb-6 overflow-x-hidden">
-            <img
-                className="flex w-32 h-48 bg-gray-300 drop-shadow-xl m-4 md:mx-12 md:w-48 md:h-64"
-                src="https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b"
-                alt="Cover of Already Reading Book"
-            >
-                {/* Image of Cover of Already Reading Book */}
-            </img>
-            <h1 className="text-xl font-semibold sm:text-2xl md:text-3xl">
-                {title}
-            </h1>
-            <h1 className="text-md sm:text-lg md:text-xl">{author}</h1>
-            <div class="flex justify-center">{renderStars()}</div>
-            <div
-                className={`animate-fade-in-out duration-100 ${
-                    showRatingRecorded ? "text-green-500" : "text-transparent"
-                }`}
-            >
-                Rating Recorded
+        <Link
+            to={{
+                pathname: `/book/${id}`,
+            }}
+        >
+            <div className="flex flex-col items-center justify-around md:justify-center mx-4 mb-6 overflow-x-hidden hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+                <img
+                    className="flex w-32 h-48 bg-gray-300 drop-shadow-xl m-4 md:mx-12 md:w-48 md:h-64"
+                    src="https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b"
+                    alt="Cover of Already Reading Book"
+                >
+                    {/* Image of Cover of Already Reading Book */}
+                </img>
+                <h1 className="text-xl font-semibold sm:text-2xl md:text-3xl">
+                    {Book.title}
+                </h1>
+                <h1 className="text-md sm:text-lg md:text-xl">{author}</h1>
+                <div class="flex justify-center">{renderStars()}</div>
+                <div
+                    className={`animate-fade-in-out duration-100 ${
+                        showRatingRecorded
+                            ? "text-green-500"
+                            : "text-transparent"
+                    }`}
+                >
+                    Rating Recorded
+                </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
 Book.propTypes = {
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     initialRating: PropTypes.number.isRequired,
