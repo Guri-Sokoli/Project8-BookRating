@@ -1,8 +1,8 @@
 import Header from "../components/Header.js";
 import LastReadBook from "../components/LastReadBook.js";
-import PopularSection from "../components/PopularSectionHome.js";
+import PopularSectionHome from "../components/PopularSectionHome.js";
 import RecommendationSection from "../components/RecommendationSection.js";
-import FooterHome from "../components/FooterHome.js";
+import Footer from "../components/Footer.js";
 
 const popBooks = [
     {
@@ -103,11 +103,11 @@ const lastReadBook = {
     percentageRead: 50,
     cover: "",
 };
+
 function HomePage({ isLoggedIn, setIsLoggedIn }) {
     return (
         <div className="bg-[#FFF7E7]">
             <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-
             <h1 className="text-3xl sm:text-4xl md:text-5xl text-center text-[#59461B] mt-12">
                 Welcome to BetterReads
             </h1>
@@ -120,14 +120,14 @@ function HomePage({ isLoggedIn, setIsLoggedIn }) {
             <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
                 Popular Now
             </div>
-            <PopularSection books={popBooks} />
+            <PopularSectionHome books={popBooks} />
 
             <div className="w-full text-2xl md:text-4xl text-[#59461B] font-bold py-8 pl-12">
                 Reccomendation
             </div>
             <RecommendationSection books={recBooks} />
 
-            <FooterHome />
+            <Footer />
         </div>
     );
 }

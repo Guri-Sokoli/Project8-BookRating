@@ -7,7 +7,7 @@ import "../index.css";
 
 import { Link } from "react-router-dom";
 
-const header = ({ isLoggedIn, setIsLoggedIn }) => {
+const Header = ({ isLoggedIn, setIsLoggedIn }) => {
     return (
         <wrapper className="flex flex-col">
             <header className="md:flex md:flex-row md:items-center md:justify-between">
@@ -115,4 +115,4 @@ const header = ({ isLoggedIn, setIsLoggedIn }) => {
     );
 };
 
-export default header;
+export default Header;

@@ -1,6 +1,6 @@
-import Header from "../components/Header.js";
+import Header from "../components/Header";
 import ReviewIcon from "../assets/review.svg";
-import FooterHome from "../components/FooterHome.js";
+import Footer from "../components/Footer";
 
 const ratedBooks = [
     {
@@ -162,7 +162,7 @@ const BookshelfPage = () => {
                     </div>
                 ))}
             </div>
-            <FooterHome />
+            <Footer />
         </div>
     );
 };

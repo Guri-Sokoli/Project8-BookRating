@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import infoIcon from "../assets/information.svg";
-import FooterHome from "./FooterHome";
+import Footer from "./Footer";
 import BookReview from "../components/BookInfoPageComponents/BookReview";
 const BookInfoPage = () => {
     reviews = [
@@ -256,7 +256,7 @@ const BookInfoPage = () => {
                 </div>
             </div>
             {renderSection()}
-            <FooterHome />
+            <Footer />
         </div>
     );
 };

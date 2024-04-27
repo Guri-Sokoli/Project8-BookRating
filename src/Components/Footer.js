@@ -4,7 +4,7 @@ import twitterIcon from "../assets/twitter.svg";
 import instagramIcon from "../assets/instagram.svg";
 import linkedinIcon from "../assets/linkedin.svg";
 
-const FooterHome = () => {
+const Footer = () => {
     return (
         <div className="flex flex-row justify-around items-start bg-[#59461B] text-white px-6 py-6 md:py-10">
             <div className="flex flex-col justify-center items-center">
@@ -71,4 +71,4 @@ const FooterHome = () => {
     );
 };
 
-export default FooterHome;
+export default Footer;
