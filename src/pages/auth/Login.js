@@ -1,36 +1,45 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import home from "../../assets/home.svg";
+// import { useHistory } from "react-router-dom";
 
 const Login = () => {
     const [formData, setFormData] = useState({ username: "", password: "" });
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const [displayMessage, setDisplayMessage] = useState("");
+    // const history = useHistory(); // Get the history object
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(
-            process.env.REACT_APP_BACKEND_URL + "/login",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            }
-        );
+        try {
+            const response = await fetch(
+                process.env.REACT_APP_BACKEND_URL + "/login",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                }
+            );
 
-        if (response.ok) {
-            const data = await response.json();
-            if (data.newUser) {
-                console.log("A new user was created");
+            if (response.ok) {
+                // Redirect to the bookshelf page upon successful login
+                window.location.href = "/bookshelf";
             } else {
-                console.log("User already existed");
+                const errorData = await response.json();
+                if (errorData.errors) {
+                    if (errorData.errors.Email) {
+                        // Display email error
+                        setDisplayMessage(errorData.errors.Email[0]);
+                    }
+                    if (errorData.errors.Password) {
+                        // Display password error
+                        setDisplayMessage(errorData.errors.Password[0]);
+                    }
+                }
             }
-            // Handle successful login, e.g. by setting user data in state
-        } else {
+        } catch (error) {
+            console.error("Error during login:", error);
             // Handle error, e.g. by showing a message to the user
         }
     };
@@ -79,21 +88,24 @@ const Login = () => {
                     </label>
                     <input
                         name="username"
-                        onChange={handleChange}
+                        onChange={handleSubmit}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
+                        required
                     />
                 </div>
                 <div className="flex flex-col  text-[#59461B]">
                     <label
-                        htmlFor="username"
+                        htmlFor="email"
                         className="text-lg pt-2 pb-1 font-semibold"
                     >
-                        Username
+                        email
                     </label>
                     <input
-                        name="username"
-                        onChange={handleChange}
+                        name="email"
+                        type="email"
+                        onChange={handleSubmit}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
+                        required
                     />
                 </div>
                 <div className="flex flex-col  text-[#59461B]">
@@ -104,10 +116,11 @@ const Login = () => {
                         Password
                     </label>
                     <input
-                        type="password"
+                        type=""
                         name="password"
-                        onChange={handleChange}
+                        onChange={handleSubmit}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
+                        required
                     />
                 </div>
 
@@ -117,6 +130,8 @@ const Login = () => {
                 >
                     Log In
                 </button>
+
+                <p style={{ color: "red" }}>{displayMessage}</p>
 
                 <h2 className="text-[#59461B] font-semibold text-lg text-center mt-8">
                     Don't have an account?{" "}

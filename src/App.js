@@ -17,11 +17,13 @@ import ProtectedPage from "./pages/ProtectedPage";
 import BookshelfPage from "./pages/BookshelfPage";
 import BookPage from "./pages/BookPage.js";
 
+import ProfilePage from "./pages/ProfilePage";
+
 // Inside your Router component
 
 const App = () => {
     const backendURL = process.env.REACT_APP_BACKEND_URL;
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     return (
         <Router>
             <Routes>
@@ -72,7 +74,7 @@ const App = () => {
                         )
                     }
                 />
-                <Route path="/profile" element={<ProtectedPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/book/:bookId" element={<BookPage isLoggedIn />} />
             </Routes>
         </Router>

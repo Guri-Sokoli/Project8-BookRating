@@ -16,51 +16,31 @@ const Signup = () => {
         try {
             const response = await axios.post(
                 "http://localhost:5108/api/Auth/register/user",
-                formData,
                 {
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
+                    username: formData.username,
+                    email: formData.email,
+                    password: formData.password,
                 }
             );
-            if (!response.ok) {
-                const errorData = await response.json();
-                if (errorData.errors) {
-                    if (errorData.errors.Email) {
-                        // Display email error
-                        setDisplayMessage(errorData.errors.Email[0]);
-                    }
-                    if (errorData.errors.Password) {
-                        // Display password error
-                        setDisplayMessage(errorData.errors.Password[0]);
-                    }
-                }
-            } else {
-                // Handle successful signup, e.g. by redirecting to login page
-                console.log("User was created successfully");
-                setDisplayMessage("User was created successfully");
-            }
+            console.log(response);
+            setDisplayMessage("User created successfully");
         } catch (error) {
-            console.error("Error during signup:", error);
-            setDisplayMessage("An error occurred");
+            console.log(error.response.data); // Log the error response data for debugging
+            if (
+                error.response &&
+                error.response.data &&
+                error.response.data.errors &&
+                error.response.data.errors.Password
+            ) {
+                // Extract and display specific error messages for the "Password" field
+                const passwordErrors = error.response.data.errors.Password;
+                setDisplayMessage(passwordErrors.join(". ")); // Join multiple error messages with a period
+            } else {
+                // Display a generic error message
+                setDisplayMessage("An error occurred. Please try again.");
+            }
         }
     };
-
-    //         if (response.data.newUser) {
-    //             setDisplayMessage("A new user was created"); // Add this line
-    //         } else {
-    //             setDisplayMessage("User already existed"); // Add this line
-    //         }
-    //     } catch (error) {
-    //         if (error.response && error.response.status === 400) {
-    //             // Handle 400 error. If the error response has a message, display it
-    //             const errorMessage = error.response.data.errors.Password[0];
-    //             setDisplayMessage(errorMessage); // Display the error message to the user
-    //         } else {
-    //             setDisplayMessage("An error occurred"); // Add this line
-    //         }
-    //     }
-    // };
 
     return (
         <div className="flex flex-col justify- items-center bg-[#59461B] w-screen h-screen">
@@ -108,6 +88,7 @@ const Signup = () => {
                         name="username"
                         onChange={handleChange}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
+                        required
                     />
                 </div>
                 <div className="flex flex-col  text-[#59461B]">
@@ -119,8 +100,10 @@ const Signup = () => {
                     </label>
                     <input
                         name="email"
+                        type="email"
                         onChange={handleChange}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
+                        required
                     />
                 </div>
                 <div className="flex flex-col  text-[#59461B]">
@@ -135,6 +118,7 @@ const Signup = () => {
                         name="password"
                         onChange={handleChange}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
+                        required
                     />
                 </div>
 
