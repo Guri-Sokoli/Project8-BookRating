@@ -213,7 +213,70 @@ namespace BookRating.Services.Implementations
             return $"The book with ID {book.Id} is deleted successfully.";
         }
 
+        public async Task<List<BookResponseDto>> SearchBooksAsync(string title, string author)
+        {
+            var books = await _context.Books
+                .Where(b => b.Title.Contains(title) && b.Author.Contains(author))
+                .ToListAsync();
 
+            var booksDto = books.Select(b => new BookResponseDto
+            {
+                Title = b.Title,
+                PageCount = b.PageCount,
+                Description = b.Description,
+                PublicationYear = b.PublicationYear,
+                CoverLink = b.CoverLink,
+                Author = b.Author,
+                ISBN = b.ISBN,
+                RateAvg = b.RateAvg,
+                Category = b.Category != null ? b.Category.Name : null
+            }).ToList();
+
+            return booksDto;
+        }
+        public async Task<List<BookResponseDto>> GetMostPopularBooksAsync()
+        {
+            var books = await _context.Books
+                                      .OrderByDescending(b => b.RateAvg)
+                                      .Take(10)
+                                      .ToListAsync();
+
+            var booksDto = books.Select(b => new BookResponseDto
+            {
+                Title = b.Title,
+                PageCount = b.PageCount,
+                Description = b.Description,
+                PublicationYear = b.PublicationYear,
+                CoverLink = b.CoverLink,
+                Author = b.Author,
+                RateAvg = b.RateAvg,
+                ISBN = b.ISBN,
+                Category = b.Category != null ? b.Category.Name : null
+            }).ToList();
+
+            return booksDto;
+        }
+
+        public async Task<List<BookResponseDto>> GetRecommendedBooksAsync()
+        {
+            var recommendedBooks = await _context.Books
+                .Where(b => b.RateAvg >= 4)
+                .Select(b => new BookResponseDto
+                {
+                    Title = b.Title,
+                    PageCount = b.PageCount,
+                    Description = b.Description,
+                    PublicationYear = b.PublicationYear,
+                    CoverLink = b.CoverLink,
+                    Author = b.Author,
+                    RateAvg = b.RateAvg,
+                    ISBN = b.ISBN,
+                    Category = b.Category != null ? b.Category.Name : null
+                })
+                .ToListAsync();
+
+            return recommendedBooks;
+        }
 
         //HELPER METHOD
         private bool BookExists(string isbn) {

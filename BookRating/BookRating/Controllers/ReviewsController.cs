@@ -29,9 +29,16 @@ namespace BookRating.Controllers
         {
             try
             {
-                var userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
-                var review = await _reviewService.CreateReview(userId, bookId, reviewDto);
-                return CreatedAtAction(nameof(GetReview), new { id = review.Id }, review);
+                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out var userId))
+                {
+                    var review = await _reviewService.CreateReview(userId, bookId, reviewDto);
+                    return CreatedAtAction(nameof(GetReview), new { id = review.Id }, review);
+                }
+                else
+                {
+                    return BadRequest("Invalid user ID claim.");
+                }
             }
             catch (Exception ex)
             {
@@ -41,13 +48,20 @@ namespace BookRating.Controllers
 
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<IActionResult> EditReview(int id, [FromBody] ReviewDto modifiedReview)
+        public async Task<IActionResult> EditReview(int id, [FromBody] ModifiedReviewDto modifiedReview)
         {
             try
             {
-                var userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
-                var review = await _reviewService.EditReview(userId, id, modifiedReview);
-                return NoContent();
+                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out var userId))
+                {
+                    var review = await _reviewService.EditReview(userId, id, modifiedReview);
+                    return NoContent();
+                }
+                else
+                {
+                    return BadRequest("Invalid user ID claim.");
+                }
             }
             catch (Exception ex)
             {
@@ -61,9 +75,16 @@ namespace BookRating.Controllers
         {
             try
             {
-                var userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
-                var reviews = await _reviewService.GetUserReviews(userId);
-                return Ok(reviews);
+                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out var userId))
+                {
+                    var reviews = await _reviewService.GetUserReviews(userId);
+                    return Ok(reviews);
+                }
+                else
+                {
+                    return BadRequest("Invalid user ID claim.");
+                }
             }
             catch (Exception ex)
             {
@@ -99,9 +120,16 @@ namespace BookRating.Controllers
         {
             try
             {
-                var userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
-                await _reviewService.DeleteReview(userId, id);
-                return NoContent();
+                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out var userId))
+                {
+                    await _reviewService.DeleteReview(userId, id);
+                    return NoContent();
+                }
+                else
+                {
+                    return BadRequest("Invalid user ID claim.");
+                }
             }
             catch (Exception ex)
             {

@@ -26,11 +26,18 @@ namespace BookRating.Services.Implementations
             if (existingReview != null)
                 throw new InvalidOperationException("You have already reviewed this book.");
 
+            // Create a new UserBook entry since each review is unique and corresponds to a unique UserBook entry
+            var userBook = new UserBook
+            {
+                UserId = userId,
+                BookId = bookId
+            };
+            _context.UserBooks.Add(userBook);
+
             var review = new Review
             {
-                Rating = reviewDto.Rating.Value,
+                Rating = reviewDto.Rating,
                 Comment = reviewDto.Comment,
-                CreatedAt = DateTime.UtcNow,
                 UserId = userId,
                 BookId = bookId
             };
@@ -38,10 +45,11 @@ namespace BookRating.Services.Implementations
             _context.Add(review);
             await _context.SaveChangesAsync();
             await UpdateBookRateAvgAsync(bookId);
+
             return review;
         }
 
-        public async Task<Review> EditReview(int userId, int reviewId, ReviewDto reviewDto)
+        public async Task<Review> EditReview(int userId, int reviewId, ModifiedReviewDto reviewDto)
         {
             var review = await _context.Reviews.FindAsync(reviewId);
             if (review == null)
@@ -59,13 +67,11 @@ namespace BookRating.Services.Implementations
             return review;
         }
 
-        public async Task<IEnumerable<object>> GetUserReviews(int userId)
+        public async Task<IEnumerable<ReviewResponseDto>> GetUserReviews(int userId)
         {
             return await _context.Reviews
                 .Where(r => r.UserId == userId)
-                .Include(r => r.Book)
-                .ThenInclude(b => b.Category)
-                .Select(r => new
+                .Select(r => new ReviewResponseDto
                 {
                     Rating = r.Rating,
                     Comment = r.Comment,

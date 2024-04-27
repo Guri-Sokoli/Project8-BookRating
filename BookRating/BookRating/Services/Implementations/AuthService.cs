@@ -26,6 +26,12 @@ namespace BookRating.Services.Implementations
                 throw new Exception("Username already exists");
             }
 
+            var emailExists = await _context.Users.AnyAsync(u => u.Email == newUser.Email);
+            if (emailExists)
+            {
+                throw new Exception("A user with this email already exists");
+            }
+
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(newUser.Password);
 
             var user = new User

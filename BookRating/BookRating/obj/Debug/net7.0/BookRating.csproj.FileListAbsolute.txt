@@ -5,7 +5,6 @@ C:/Users/gresa/OneDrive/Desktop/Project/Project8-BookRating/BookRating/BookRatin
 C:/Users/gresa/OneDrive/Desktop/Project/Project8-BookRating/BookRating/BookRating/obj/Debug/net7.0/BookRating.csproj.CoreCompileInputs.cache
 C:/Users/gresa/OneDrive/Desktop/Project/Project8-BookRating/BookRating/BookRating/obj/Debug/net7.0/BookRating.MvcApplicationPartsAssemblyInfo.cs
 C:/Users/gresa/OneDrive/Desktop/Project/Project8-BookRating/BookRating/BookRating/obj/Debug/net7.0/BookRating.MvcApplicationPartsAssemblyInfo.cache
-C:/Users/gresa/OneDrive/Desktop/Project/Project8-BookRating/BookRating/BookRating/obj/Debug/net7.0/BookRating.sourcelink.json
 C:/Users/gresa/OneDrive/Desktop/Project/Project8-BookRating/BookRating/BookRating/bin/Debug/net7.0/appsettings.Development.json
 C:/Users/gresa/OneDrive/Desktop/Project/Project8-BookRating/BookRating/BookRating/bin/Debug/net7.0/appsettings.json
 C:/Users/gresa/OneDrive/Desktop/Project/Project8-BookRating/BookRating/BookRating/bin/Debug/net7.0/BookRating.exe
@@ -393,7 +392,6 @@ C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRatin
 C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\BookRating.csproj.CoreCompileInputs.cache
 C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\BookRating.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\BookRating.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\BookRating.sourcelink.json
 C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating\BookRating\obj\Debug\net7.0\staticwebassets\msbuild.BookRating.Microsoft.AspNetCore.StaticWebAssets.props

@@ -21,9 +21,9 @@ namespace BookRating.Services.Implementations
             List<Claim> claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(ClaimTypes.Name, user.Username),
-            new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.Role)
+            new Claim(ClaimTypes.Name, user.Username !),
+            new Claim(ClaimTypes.Email, user.Email !),
+            new Claim(ClaimTypes.Role, user.Role !)
         };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(

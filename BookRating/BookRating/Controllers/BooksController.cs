@@ -126,28 +126,37 @@ namespace BookRating.Controllers
             }
         }
 
-        // GET: api/books/recommended
-        /*
-        [HttpGet("recommended")]
-        public IActionResult GetRecommendedBooks()
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchBooks([FromQuery] string title, [FromQuery] string author)
         {
-            var recommendedBooks = _context.Books
-                .Where(b => b.RateAvg >= 4) // Assuming a rating of 4+ is considered 'recommended'
-                .Select(b => new BookResponseDto
-                {
-                    Title = b.Title,
-                    Description = b.Description,
-                    PublicationYear = b.PublicationYear,
-                    CoverLink = b.CoverLink,
-                    Author = b.Author,
-                    RateAvg = b.RateAvg,
-                    Category = b.Category.Name //this to be modified
-                }).ToList();
+            var books = await _bookService.SearchBooksAsync(title, author);
+            if (books == null || books.Count == 0)
+                return NotFound("No books found matching the criteria.");
 
-            return Ok(recommendedBooks);
+            return Ok(books);
         }
-        */
-        
 
+        [HttpGet("most-popular")]
+        public async Task<IActionResult> GetMostPopularBooks()
+        {
+            var books = await _bookService.GetMostPopularBooksAsync();
+            return Ok(books);
+        }
+
+        // GET: api/books/recommended
+        [HttpGet("recommended")]
+        public async Task<IActionResult> GetRecommendedBooks()
+        {
+            try
+            {
+                var recommendedBooks = await _bookService.GetRecommendedBooksAsync();
+                return Ok(recommendedBooks);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error getting recommended books: {Message}", e.Message);
+                return StatusCode(500, "Internal server error while retrieving recommended books.");
+            }
+        }
     }
 }

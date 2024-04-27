@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YyK5tpCEjxBJ/0paqJOJysZR2+9llsXH0xPJEF9iwRk=",
+  "Hash": "cNyxQzOqRkr8vXQbQ+VZR1KeuoTLhI/m1ixKnvIp/P0=",
   "Source": "BookRating",
   "BasePath": "_content/BookRating",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "BookRating\\wwwroot",
       "Source": "BookRating",
-      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend\\BookRatingServer\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
       "BasePath": "_content/BookRating",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Buton\\Desktop\\Backend\\BookRatingServer\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
+      "Identity": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend\\BookRatingServer\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg"
     },
     {
-      "Identity": "C:\\Users\\Buton\\Desktop\\Backend\\BookRatingServer\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
+      "Identity": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend\\BookRatingServer\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg"
     },
     {
-      "Identity": "C:\\Users\\Buton\\Desktop\\Backend\\BookRatingServer\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
+      "Identity": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
       "SourceId": "BookRating",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Buton\\Desktop\\Backend\\BookRatingServer\\BookRating\\BookRating\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\",
       "BasePath": "_content/BookRating",
       "RelativePath": "uploads/cover/fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
       "AssetKind": "All",

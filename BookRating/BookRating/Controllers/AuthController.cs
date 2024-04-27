@@ -28,27 +28,13 @@ namespace BookRating.Controllers
             _authService = authService;
         }
 
-        [HttpPost("register/admin")]
-        public async Task<IActionResult> RegisterAdmin([FromBody] UserRegistration newUser)
-        {
-            try
-            {
-                string token = await _authService.RegisterUser(newUser, "Admin");
-                return Ok(token);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-
-        [HttpPost("register/user")]
+        [HttpPost("register")]
         public async Task<IActionResult> RegisterUser([FromBody] UserRegistration newUser)
         {
             try
             {
                 string token = await _authService.RegisterUser(newUser, "User");
-                return Ok(token);
+                return Ok(new { token});
             }
             catch (Exception ex)
             {
@@ -62,7 +48,7 @@ namespace BookRating.Controllers
             try
             {
                 string token = await _authService.LoginUser(user);
-                return Ok(token);
+                return Ok(new { token});
             }
             catch (Exception ex)
             {
