@@ -30,13 +30,13 @@ namespace BookRating.Controllers
         /*USE:
          * Returns all the books
          */
-        [Authorize(Roles = "User,Admin")]
+        
         [HttpGet]
         public async Task<IActionResult> GetBooks()
         {
             try {
                 var booksResponse = await _bookService.GetAllBooksAsync();
-                return Ok(booksResponse);
+                return Ok(new { booksResponse, isValid= true  });
 
             }
             catch (Exception e)
@@ -52,8 +52,7 @@ namespace BookRating.Controllers
          * Returns a book by id
          */
         [HttpGet("{id}")]
-        [Authorize(Roles = "User,Admin")]
-        public async Task<IActionResult> GetBookById([FromQuery]int id)
+        public async Task<IActionResult> GetBookById(int id)
         {
             try { 
 
@@ -127,28 +126,50 @@ namespace BookRating.Controllers
             }
         }
 
-        // GET: api/books/recommended
-        /*
-        [HttpGet("recommended")]
-        public IActionResult GetRecommendedBooks()
+        [HttpGet("search")]
+        public async Task<ActionResult<List<BookResponseDto>>> SearchBooks([FromQuery] string query, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var recommendedBooks = _context.Books
-                .Where(b => b.RateAvg >= 4) // Assuming a rating of 4+ is considered 'recommended'
-                .Select(b => new BookResponseDto
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                return BadRequest("Search query cannot be empty.");
+            }
+
+            try
+            {
+                var books = await _bookService.SearchBooksAsync(query, pageNumber, pageSize);
+                if (books == null || books.Count == 0)
                 {
-                    Title = b.Title,
-                    Description = b.Description,
-                    PublicationYear = b.PublicationYear,
-                    CoverLink = b.CoverLink,
-                    Author = b.Author,
-                    RateAvg = b.RateAvg,
-                    Category = b.Category.Name //this to be modified
-                }).ToList();
-
-            return Ok(recommendedBooks);
+                    return NotFound("No books found matching your criteria.");
+                }
+                return Ok(books);
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode(500, "An error occurred while processing your request: " + ex.Message);
+            }
         }
-        */
-        
 
+        [HttpGet("most-popular")]
+        public async Task<IActionResult> GetMostPopularBooks()
+        {
+            var books = await _bookService.GetMostPopularBooksAsync();
+            return Ok(books);
+        }
+
+        // GET: api/books/recommended
+        [HttpGet("recommended")]
+        public async Task<IActionResult> GetRecommendedBooks()
+        {
+            try
+            {
+                var recommendedBooks = await _bookService.GetRecommendedBooksAsync();
+                return Ok(recommendedBooks);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error getting recommended books: {Message}", e.Message);
+                return StatusCode(500, "Internal server error while retrieving recommended books.");
+            }
+        }
     }
 }

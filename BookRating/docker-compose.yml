@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  bookrating:
+    image: ${DOCKER_REGISTRY-}bookrating
+    build:
+      context: .
+      dockerfile: BookRating/Dockerfile

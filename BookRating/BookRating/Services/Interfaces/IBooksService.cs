@@ -12,5 +12,9 @@ namespace BookRating.Services.Interfaces
         Task<string> CreateBookAsync(BookRequestDto bookRequest);
 
         Task<string> DeleteBookAsync(int id);
+        Task<List<BookResponseDto>> SearchBooksAsync(string searchText, int pageNumber = 1, int pageSize = 10);
+        Task<List<BookResponseDto>> GetMostPopularBooksAsync();
+        Task<List<BookResponseDto>> GetRecommendedBooksAsync();
+
     }
 }

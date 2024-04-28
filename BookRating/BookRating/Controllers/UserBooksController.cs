@@ -33,7 +33,7 @@ namespace BookRating.Controllers
             if (string.IsNullOrEmpty(userId) || !int.TryParse(userId, out int userIdInt))
             {
                 _logger.LogWarning("User ID is invalid or not authenticated.");
-                return Unauthorized("User is not authenticated.");
+                return Unauthorized(new { vlera = "User is not authenticated." , isValid = false });
             }
 
             try

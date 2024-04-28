@@ -26,21 +26,30 @@ namespace BookRating.Services.Implementations
             if (existingReview != null)
                 throw new InvalidOperationException("You have already reviewed this book.");
 
+            // Create a new UserBook entry since each review is unique and corresponds to a unique UserBook entry
+            var userBook = new UserBook
+            {
+                UserId = userId,
+                BookId = bookId
+            };
+            _context.UserBooks.Add(userBook);
+
             var review = new Review
             {
-                Rating = reviewDto.Rating.Value,
+                Rating = reviewDto.Rating,
                 Comment = reviewDto.Comment,
-                CreatedAt = DateTime.UtcNow,
                 UserId = userId,
                 BookId = bookId
             };
 
             _context.Add(review);
             await _context.SaveChangesAsync();
+            await UpdateBookRateAvgAsync(bookId);
+
             return review;
         }
 
-        public async Task<Review> EditReview(int userId, int reviewId, ReviewDto reviewDto)
+        public async Task<Review> EditReview(int userId, int reviewId, ModifiedReviewDto reviewDto)
         {
             var review = await _context.Reviews.FindAsync(reviewId);
             if (review == null)
@@ -54,16 +63,15 @@ namespace BookRating.Services.Implementations
 
             _context.Entry(review).State = EntityState.Modified;
             await _context.SaveChangesAsync();
+
             return review;
         }
 
-        public async Task<IEnumerable<object>> GetUserReviews(int userId)
+        public async Task<IEnumerable<ReviewResponseDto>> GetUserReviews(int userId)
         {
             return await _context.Reviews
                 .Where(r => r.UserId == userId)
-                .Include(r => r.Book)
-                .ThenInclude(b => b.Category)
-                .Select(r => new
+                .Select(r => new ReviewResponseDto
                 {
                     Rating = r.Rating,
                     Comment = r.Comment,
@@ -83,13 +91,12 @@ namespace BookRating.Services.Implementations
                 .Include(r => r.User)
                 .Include(r => r.Book)
                 .ThenInclude(b => b.Category)
-                .Select(r => new
+                .Select(r => new ReviewResponseDto
                 {
-                    ReviewId = r.Id,
+                    
                     Rating = r.Rating,
                     Comment = r.Comment,
                     CreatedAt = r.CreatedAt,
-                    User = r.User.Username,
                     BookTitle = r.Book.Title,
                     BookAuthor = r.Book.Author,
                     BookCategory = r.Book.Category.Name,
@@ -118,6 +125,81 @@ namespace BookRating.Services.Implementations
                 throw new InvalidOperationException("You cannot delete someone else's review.");
 
             _context.Reviews.Remove(review);
+            await _context.SaveChangesAsync();
+        }
+
+
+
+
+        //PROVE
+
+        /*
+        public async Task<IEnumerable<ReviewDto>> GetBookReviewsAsync(int bookid)
+        {
+            var review = await _context.Reviews
+                .Where(r => r.BookId == bookid).ToListAsync();
+
+                var reviewResponse = review.Select(r => new ReviewDto
+                {
+                    Rating = r.Rating,
+                    Comment = r.Comment,
+
+                }).ToList();
+
+            if (review == null) {
+                throw new Exception("No such book");
+            }
+            
+
+            return reviewResponse;
+        }
+        */
+
+        public async Task<IEnumerable<ReviewUserDetails>> GetBookReviewsAsync(int bookid) {
+
+
+
+            var reviewResponse = (from a in _context.Reviews
+                                  join b in _context.Users on a.UserId equals b.Id
+                                  where a.BookId == bookid
+                                  select new ReviewUserDetails {
+                                      Rating = a.Rating,
+                                      Comment = a.Comment,
+                                      UserName = b.Username,
+
+                                  }).ToListAsync();
+
+            return await reviewResponse;
+            
+        }
+
+
+
+
+
+
+        //HELPER METHOD
+        public async Task UpdateBookRateAvgAsync(int bookId)
+        {
+
+            var book = await _context.Books.FirstOrDefaultAsync(b => b.Id == bookId);
+            if (book == null) return;
+
+            // Calculate the average rating from the Reviews table separately
+            var averageRating = await _context.Reviews
+                .Where(r => r.BookId == bookId)
+                .AverageAsync(r => (double?)r.Rating);
+
+
+            //Rounded the avg ; default value: 0
+            double roundedAvgRating = Math.Round(averageRating ?? 0, 1, MidpointRounding.AwayFromZero);
+
+
+
+            book.RateAvg = roundedAvgRating;
+
+           
+            _context.Books.Update(book);
             await _context.SaveChangesAsync();
         }
     }

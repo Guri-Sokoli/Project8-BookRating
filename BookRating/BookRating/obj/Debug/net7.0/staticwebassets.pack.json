@@ -1,15 +1,23 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
+      "Id": "C:\\Users\\Buton\\Desktop\\BackEnd\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg",
       "PackagePath": "staticwebassets\\uploads\\cover\\1a6fe208-5739-4063-8733-d6031aa47ad7.jpg"
     },
     {
-      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
+      "Id": "C:\\Users\\Buton\\Desktop\\BackEnd\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg",
       "PackagePath": "staticwebassets\\uploads\\cover\\3537a32c-1bc0-4c1d-8429-de5cd9af0a14.jpg"
     },
     {
-      "Id": "C:\\Users\\Buton\\Desktop\\Backend-projectMAIN\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
+      "Id": "C:\\Users\\Buton\\Desktop\\BackEnd\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\3d24bc87-f10f-48cd-9cb5-b4a079a3d45e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cover\\3d24bc87-f10f-48cd-9cb5-b4a079a3d45e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Buton\\Desktop\\BackEnd\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\c3024f4a-d889-4299-8311-a708a54ee117.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cover\\c3024f4a-d889-4299-8311-a708a54ee117.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Buton\\Desktop\\BackEnd\\Project8-BookRating\\BookRating\\BookRating\\wwwroot\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg",
       "PackagePath": "staticwebassets\\uploads\\cover\\fed54c6d-f8a4-4407-8ee1-403ee49f8a3c.jpg"
     },
     {

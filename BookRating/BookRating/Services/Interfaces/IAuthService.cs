@@ -5,8 +5,8 @@ namespace BookRating.Services.Interfaces
 {
     public interface IAuthService
     {
-        Task<string> RegisterUser(UserRegistration newUser, string role);
-        Task<string> LoginUser(UserLogIn userLogin);
+        Task<(string Token, string Role)> RegisterUser(UserRegistration newUser, string role);
+        Task<(string Token, string Role)> LoginUser(UserLogIn userLogin);
     }
 
 }

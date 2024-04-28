@@ -18,12 +18,18 @@ namespace BookRating.Services.Implementations
             _tokenService = tokenService;
         }
 
-        public async Task<string> RegisterUser(UserRegistration newUser, string role)
+        public async Task<(string Token, string Role)> RegisterUser(UserRegistration newUser, string role)
         {
             var userExists = await _context.Users.AnyAsync(u => u.Username == newUser.Username);
             if (userExists)
             {
                 throw new Exception("Username already exists");
+            }
+
+            var emailExists = await _context.Users.AnyAsync(u => u.Email == newUser.Email);
+            if (emailExists)
+            {
+                throw new Exception("A user with this email already exists");
             }
 
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(newUser.Password);
@@ -39,10 +45,11 @@ namespace BookRating.Services.Implementations
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return _tokenService.CreateToken(user);
+            var token = _tokenService.CreateToken(user);
+            return (token, role);
         }
 
-        public async Task<string> LoginUser(UserLogIn userLogin)
+        public async Task<(string Token, string Role)> LoginUser(UserLogIn userLogin)
         {
             var userExist = await _context.Users.SingleOrDefaultAsync(u => u.Username == userLogin.Username);
 
@@ -51,7 +58,8 @@ namespace BookRating.Services.Implementations
                 throw new Exception("Invalid username or password.");
             }
 
-            return _tokenService.CreateToken(userExist);
+            var token = _tokenService.CreateToken(userExist);
+            return (token, userExist.Role!);
         }
     }
 

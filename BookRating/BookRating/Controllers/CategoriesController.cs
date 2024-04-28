@@ -15,7 +15,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "User,Admin")]
+    
     public async Task<IActionResult> GetCategory()
     {
         var categories = await _categoryService.GetAllCategoriesAsync();
@@ -23,7 +23,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = "User,Admin")]
+   
     public async Task<IActionResult> GetCategoryById(int id)
     {
         var category = await _categoryService.GetCategoryByIdAsync(id);
