@@ -11,6 +11,8 @@ namespace BookRating.Services.Interfaces
         Task<object> GetReview(int reviewId);
         Task<IEnumerable<Review>> GetAllReviews();
         Task DeleteReview(int userId, int reviewId);
+
+        Task<IEnumerable<ReviewUserDetails>> GetBookReviewsAsync(int bookid);
     }
 
 }

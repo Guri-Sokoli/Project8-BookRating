@@ -29,6 +29,7 @@ namespace BookRating.Services.Implementations
                                         .ToListAsync();
             var booksDto = books.Select(b => new BookResponseDto
             {
+                Id = b.Id,
                 Title = b.Title,
                 PageCount = b.PageCount,
                 Description = b.Description,
@@ -64,6 +65,7 @@ namespace BookRating.Services.Implementations
             
             bookDto = new BookResponseDto
             {
+                Id = bookById.Id,   
                 Title = bookById.Title,
                 PageCount = bookById.PageCount,
                 Description = bookById.Description,
@@ -213,14 +215,16 @@ namespace BookRating.Services.Implementations
             return $"The book with ID {book.Id} is deleted successfully.";
         }
 
+        /*
         public async Task<List<BookResponseDto>> SearchBooksAsync(string title, string author)
         {
             var books = await _context.Books
-                .Where(b => b.Title.Contains(title) && b.Author.Contains(author))
+                .Where(b => b.Title.Contains(title) || b.Author.Contains(author))
                 .ToListAsync();
 
             var booksDto = books.Select(b => new BookResponseDto
             {
+                Id = b.Id,
                 Title = b.Title,
                 PageCount = b.PageCount,
                 Description = b.Description,
@@ -234,6 +238,41 @@ namespace BookRating.Services.Implementations
 
             return booksDto;
         }
+        */
+
+        public async Task<List<BookResponseDto>> SearchBooksAsync(string searchText, int pageNumber = 1, int pageSize = 10)
+        {
+            if (string.IsNullOrWhiteSpace(searchText))
+                return new List<BookResponseDto>();  // Return an empty list if search text is empty or whitespace
+
+            // Normalize search text for consistent comparison
+            var normalizedSearchText = searchText.Trim().ToLowerInvariant();
+
+            var query = _context.Books
+                
+                .Where(b => b.Title.ToLower().Contains(normalizedSearchText) || b.Author.ToLower().Contains(normalizedSearchText))
+                .OrderBy(b => b.Title)  // Optionally, sort by title or any other relevant field
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize);
+
+            var books = await query.ToListAsync();
+
+            return books.Select(b => new BookResponseDto
+            {
+                Id = b.Id,
+                Title = b.Title,
+                PageCount = b.PageCount,
+                Description = b.Description,
+                PublicationYear = b.PublicationYear,
+                CoverLink = b.CoverLink,
+                Author = b.Author,
+                ISBN = b.ISBN,
+                RateAvg = b.RateAvg,
+                Category = b.Category != null ? b.Category.Name : null
+            }).ToList();
+        }
+
+
         public async Task<List<BookResponseDto>> GetMostPopularBooksAsync()
         {
             var books = await _context.Books
@@ -243,6 +282,7 @@ namespace BookRating.Services.Implementations
 
             var booksDto = books.Select(b => new BookResponseDto
             {
+                Id = b.Id,  
                 Title = b.Title,
                 PageCount = b.PageCount,
                 Description = b.Description,
@@ -263,6 +303,8 @@ namespace BookRating.Services.Implementations
                 .Where(b => b.RateAvg >= 4)
                 .Select(b => new BookResponseDto
                 {
+
+                    Id=b.Id,
                     Title = b.Title,
                     PageCount = b.PageCount,
                     Description = b.Description,

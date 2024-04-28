@@ -6,7 +6,7 @@ namespace BookRating.DTOs
     {
         [Range(1,5)]
         [Required]
-        public double Rating { get; set; }
+        public int Rating { get; set; }
         public string? Comment { get; set; }
     }
 }

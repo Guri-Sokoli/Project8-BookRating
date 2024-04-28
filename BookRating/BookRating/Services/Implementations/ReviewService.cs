@@ -91,13 +91,12 @@ namespace BookRating.Services.Implementations
                 .Include(r => r.User)
                 .Include(r => r.Book)
                 .ThenInclude(b => b.Category)
-                .Select(r => new
+                .Select(r => new ReviewResponseDto
                 {
-                    ReviewId = r.Id,
+                    
                     Rating = r.Rating,
                     Comment = r.Comment,
                     CreatedAt = r.CreatedAt,
-                    User = r.User.Username,
                     BookTitle = r.Book.Title,
                     BookAuthor = r.Book.Author,
                     BookCategory = r.Book.Category.Name,
@@ -131,6 +130,54 @@ namespace BookRating.Services.Implementations
 
 
 
+
+        //PROVE
+
+        /*
+        public async Task<IEnumerable<ReviewDto>> GetBookReviewsAsync(int bookid)
+        {
+            var review = await _context.Reviews
+                .Where(r => r.BookId == bookid).ToListAsync();
+
+                var reviewResponse = review.Select(r => new ReviewDto
+                {
+                    Rating = r.Rating,
+                    Comment = r.Comment,
+
+                }).ToList();
+
+            if (review == null) {
+                throw new Exception("No such book");
+            }
+            
+
+            return reviewResponse;
+        }
+        */
+
+        public async Task<IEnumerable<ReviewUserDetails>> GetBookReviewsAsync(int bookid) {
+
+
+
+            var reviewResponse = (from a in _context.Reviews
+                                  join b in _context.Users on a.UserId equals b.Id
+                                  where a.BookId == bookid
+                                  select new ReviewUserDetails {
+                                      Rating = a.Rating,
+                                      Comment = a.Comment,
+                                      UserName = b.Username,
+
+                                  }).ToListAsync();
+
+            return await reviewResponse;
+            
+        }
+
+
+
+
+
+
         //HELPER METHOD
         public async Task UpdateBookRateAvgAsync(int bookId)
         {
@@ -143,10 +190,15 @@ namespace BookRating.Services.Implementations
                 .Where(r => r.BookId == bookId)
                 .AverageAsync(r => (double?)r.Rating);
 
-            // If there are no reviews, set the average rating to 0
-            book.RateAvg = averageRating ?? 0;
 
-            // Mark the book as modified and save the changes
+            //Rounded the avg ; default value: 0
+            double roundedAvgRating = Math.Round(averageRating ?? 0, 1, MidpointRounding.AwayFromZero);
+
+
+
+            book.RateAvg = roundedAvgRating;
+
+           
             _context.Books.Update(book);
             await _context.SaveChangesAsync();
         }

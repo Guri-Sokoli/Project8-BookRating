@@ -60,6 +60,7 @@ public class UserBooksService : IUserBooksService
             _logger.LogInformation("Retrieved {Count} books for user {UserId}.", books.Count, userId);
             return books.Select(b => new BookResponseDto
             {
+                Id = b.Id,
                 Title = b.Title,
                 PageCount = b.PageCount,
                 Description = b.Description,

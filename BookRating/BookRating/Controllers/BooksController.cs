@@ -36,7 +36,7 @@ namespace BookRating.Controllers
         {
             try {
                 var booksResponse = await _bookService.GetAllBooksAsync();
-                return Ok(booksResponse);
+                return Ok(new { booksResponse, isValid= true  });
 
             }
             catch (Exception e)
@@ -52,7 +52,7 @@ namespace BookRating.Controllers
          * Returns a book by id
          */
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBookById([FromQuery]int id)
+        public async Task<IActionResult> GetBookById(int id)
         {
             try { 
 
@@ -127,13 +127,26 @@ namespace BookRating.Controllers
         }
 
         [HttpGet("search")]
-        public async Task<IActionResult> SearchBooks([FromQuery] string title, [FromQuery] string author)
+        public async Task<ActionResult<List<BookResponseDto>>> SearchBooks([FromQuery] string query, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var books = await _bookService.SearchBooksAsync(title, author);
-            if (books == null || books.Count == 0)
-                return NotFound("No books found matching the criteria.");
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                return BadRequest("Search query cannot be empty.");
+            }
 
-            return Ok(books);
+            try
+            {
+                var books = await _bookService.SearchBooksAsync(query, pageNumber, pageSize);
+                if (books == null || books.Count == 0)
+                {
+                    return NotFound("No books found matching your criteria.");
+                }
+                return Ok(books);
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode(500, "An error occurred while processing your request: " + ex.Message);
+            }
         }
 
         [HttpGet("most-popular")]

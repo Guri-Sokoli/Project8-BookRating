@@ -33,8 +33,8 @@ namespace BookRating.Controllers
         {
             try
             {
-                string token = await _authService.RegisterUser(newUser, "User");
-                return Ok(new { token});
+                var (token, role) = await _authService.RegisterUser(newUser, "User");
+                return Ok(new { token, role });
             }
             catch (Exception ex)
             {
@@ -47,8 +47,8 @@ namespace BookRating.Controllers
         {
             try
             {
-                string token = await _authService.LoginUser(user);
-                return Ok(new { token});
+                var (token, role) = await _authService.LoginUser(user);
+                return Ok(new { token, role });
             }
             catch (Exception ex)
             {

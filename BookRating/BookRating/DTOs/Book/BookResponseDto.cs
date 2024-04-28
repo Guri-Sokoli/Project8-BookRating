@@ -5,6 +5,7 @@ namespace BookRating.DTOs.Book
 {
     public class BookResponseDto
     {
+        public int Id { get; set; }
         public required string Title { get; set; }
         public int PageCount { get; set; }
         public required string Description { get; set; }

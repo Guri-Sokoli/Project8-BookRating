@@ -136,6 +136,26 @@ namespace BookRating.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+        [HttpGet("books/{bookId}/reviews")]
+        public async Task<IActionResult> GetBookReviews(int bookId){
+
+            try
+            {
+                var reviews = await _reviewService.GetBookReviewsAsync(bookId);
+                return Ok(reviews);
+            }catch (Exception ex) {
+
+                return BadRequest(ex.Message);
+            }
+
+
+
+
+        }
+
+
     }
 
 }
