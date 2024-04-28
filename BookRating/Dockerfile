@@ -11,7 +11,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG BUILD_CONFIGURATION=Release
 
 WORKDIR "/src/BookRating/BookRating"
-RUN dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 7.0.4
+RUN dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 7.0.18
 
 WORKDIR /src
 COPY ["BookRating/BookRating.csproj", "BookRating/"]
