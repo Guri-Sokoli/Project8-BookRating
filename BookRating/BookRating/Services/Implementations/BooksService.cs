@@ -147,36 +147,7 @@ namespace BookRating.Services.Implementations
         }
 
 
-        /*
-        public async Task<string> DeleteBookAsync(int id) {
-            var book = _context.Books.FirstOrDefault(x => x.Id == id);
-            if (book == null)
-            {
-                throw new Exception("Book not found for deletion.");
-            }
-
-            var filePath = Path.Combine(_environment.WebRootPath, book.CoverLink);
-            
-            
-            if (System.IO.File.Exists(filePath))
-            {
-                System.IO.File.Delete(filePath);
-            }
-            else { 
-                throw new Exception( "Error deleting associated file.");
-            }
-            
-
-
-            _context.Books.Remove(book);
-            await _context.SaveChangesAsync();
-
-
-            return $"The book with ID {book.Id} is deleted successfully.";
-
-
-        }
-        */
+        
         public async Task<string> DeleteBookAsync(int id)
         {
             var book = _context.Books.FirstOrDefault(x => x.Id == id);

@@ -34,11 +34,11 @@ namespace BookRating.Controllers
             try
             {
                 var (token, role) = await _authService.RegisterUser(newUser, "User");
-                return Ok(new { token, role });
+                return Ok(new { token, role , isValid = true, user = newUser.Username });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = ex.Message, isValid = false });
             }
         }
 
@@ -48,11 +48,11 @@ namespace BookRating.Controllers
             try
             {
                 var (token, role) = await _authService.LoginUser(user);
-                return Ok(new { token, role });
+                return Ok(new { token, role, isValid = true, user = user.Username });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = ex.Message, isValid = false });
             }
         }
     }
