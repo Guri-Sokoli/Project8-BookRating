@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}bookrating
     build:
       context: .
-      dockerfile: BookRating/Dockerfile
+      dockerfile: Dockerfile
