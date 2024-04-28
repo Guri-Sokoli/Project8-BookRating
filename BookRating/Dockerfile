@@ -17,7 +17,6 @@ RUN dotnet restore "./BookRating/BookRating.csproj"
 COPY . .
 WORKDIR "/src/BookRating"
 RUN dotnet build "./BookRating.csproj" -c $BUILD_CONFIGURATION -o /app/build
-RUN dotnet run "./BookRating.csproj"
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
