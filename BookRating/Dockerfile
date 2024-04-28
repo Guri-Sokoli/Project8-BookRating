@@ -23,7 +23,7 @@ ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./BookRating.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM build AS run
-RUN dotnet run BookRating.csproj
+RUN dotnet run "BookRating.csproj"
 
 FROM base AS final
 WORKDIR /app
