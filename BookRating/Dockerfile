@@ -9,6 +9,10 @@ EXPOSE 5108
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG BUILD_CONFIGURATION=Release
+
+WORKDIR "/src/BookRating/BookRating"
+RUN dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 7.0.4
+
 WORKDIR /src
 COPY ["BookRating/BookRating.csproj", "BookRating/"]
 RUN dotnet restore "./BookRating/BookRating.csproj"
@@ -24,7 +28,7 @@ RUN dotnet publish "./BookRating.csproj" -c $BUILD_CONFIGURATION -o /app/publish
 
 FROM build AS run
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet run "./BookRating.csproj" -c $BUILD_CONFIGURATION -o /app/run /p:UseAppHost=false
+RUN dotnet run "./BookRating.csproj"
 
 FROM base AS final
 WORKDIR /app
