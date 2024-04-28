@@ -4,6 +4,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
+EXPOSE 7054
+EXPOSE 5108
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG BUILD_CONFIGURATION=Release
@@ -14,6 +16,7 @@ RUN dotnet restore "./BookRating/BookRating.csproj"
 COPY . .
 WORKDIR "/src/BookRating"
 RUN dotnet build "./BookRating.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet run "./BookRating.csproj"
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
