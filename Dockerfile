@@ -1,6 +1,11 @@
 # Use an official Node.js runtime as the base image
 FROM node:18 as build
 
+# Expose port 80 to the outside world
+EXPOSE 80
+EXPOSE 443
+EXPOSE 3000
+
 # The working directory in the container
 WORKDIR /app
 
@@ -14,18 +19,14 @@ RUN npm install
 COPY . .
 
 # Build the React app
-RUN npm run build
+WORKDIR /src
+RUN npm start
 
 # Serve the production build with Nginx
-FROM nginx:alpine
 
 # Copy the build output from the previous stage to Nginx's html directory
 COPY --from=build /app/build /usr/share/nginx/html
-
-# Expose port 80 to the outside world
-EXPOSE 80
-EXPOSE 443
-EXPOSE 3000
-
 # Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
+
+ENTRYPOINT [ "npm", "start" ]
