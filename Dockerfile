@@ -16,8 +16,7 @@ COPY src/ /app
 COPY package.json /app
 
 # Install dependencies
-RUN npm install
-
+CMD ["npm", "install"]
 # Copy the rest of the application code to the working directory
 COPY . .
 
