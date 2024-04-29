@@ -66,14 +66,14 @@ const BookReview = ({ review }) => {
                             src={review.pfp ? review.pfp : "/user.png"}
                             alt="User Picture"
                         />
-                        <h1>{review.username}</h1>
+                        <h1>{review.userName}</h1>
                     </div>
                     <div className="flex flex-row justify-center items-center mb-4">
-                        {renderStars(review.stars)}
+                        {renderStars(review.rating)}
                     </div>
                 </div>
                 <h1 className="px-12 text-wrap w-full text-[#59461B] text-md font-medium sm:text-lg md:text-xl">
-                    {review.review}
+                    {review.comment}
                 </h1>
             </div>
         </div>

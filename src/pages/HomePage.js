@@ -3,65 +3,68 @@ import LastReadBook from "../components/LastReadBook.js";
 import PopularSection from "../components/PopularSectionHome.js";
 import RecommendationSection from "../components/RecommendationSection.js";
 import FooterHome from "../components/FooterHome.js";
+import api from "../config/config.js";
 
-const popBooks = [
-    {
-        id: 1,
-        title: "Title of Book 1",
-        author: "Author of Book 1",
-        initialRating: 2.9,
-        isEditable: true,
-    },
-    {
-        id: 2,
-        title: "Title of Book 2",
-        author: "Author of Book 2",
-        initialRating: 4.5,
-        isEditable: true,
-    },
-    {
-        id: 3,
-        title: "Title of Book 3",
-        author: "Author of Book 3",
-        initialRating: 5,
-        isEditable: true,
-    },
-    {
-        id: 4,
-        title: "Title of Book 4",
-        author: "Author of Book 4",
-        initialRating: 3.4,
-        isEditable: true,
-    },
-    {
-        id: 5,
-        title: "Title of Book 3",
-        author: "Author of Book 3",
-        initialRating: 5,
-        isEditable: true,
-    },
-    {
-        id: 6,
-        title: "Title of Book 4",
-        author: "Author of Book 4",
-        initialRating: 3.4,
-        isEditable: true,
-    },
-    {
-        id: 7,
-        title: "Title of Book 3",
-        author: "Author of Book 3",
-        initialRating: 5,
-        isEditable: true,
-    },
-    {
-        id: 8,
-        title: "Title of Book 4",
-        author: "Author of Book 4",
-        initialRating: 3.4,
-        isEditable: true,
-    },
-];
+import { useState, useEffect } from "react";
+
+// const popBooks = [
+//     {
+//         id: 1,
+//         title: "Title of Book 1",
+//         author: "Author of Book 1",
+//         initialRating: 2.9,
+//         isEditable: true,
+//     },
+//     {
+//         id: 2,
+//         title: "Title of Book 2",
+//         author: "Author of Book 2",
+//         initialRating: 4.5,
+//         isEditable: true,
+//     },
+//     {
+//         id: 3,
+//         title: "Title of Book 3",
+//         author: "Author of Book 3",
+//         initialRating: 5,
+//         isEditable: true,
+//     },
+//     {
+//         id: 4,
+//         title: "Title of Book 4",
+//         author: "Author of Book 4",
+//         initialRating: 3.4,
+//         isEditable: true,
+//     },
+//     {
+//         id: 5,
+//         title: "Title of Book 3",
+//         author: "Author of Book 3",
+//         initialRating: 5,
+//         isEditable: true,
+//     },
+//     {
+//         id: 6,
+//         title: "Title of Book 4",
+//         author: "Author of Book 4",
+//         initialRating: 3.4,
+//         isEditable: true,
+//     },
+//     {
+//         id: 7,
+//         title: "Title of Book 3",
+//         author: "Author of Book 3",
+//         initialRating: 5,
+//         isEditable: true,
+//     },
+//     {
+//         id: 8,
+//         title: "Title of Book 4",
+//         author: "Author of Book 4",
+//         initialRating: 3.4,
+//         isEditable: true,
+//     },
+// ];
 
 const recBooks = [
     {
@@ -104,6 +107,25 @@ const lastReadBook = {
     cover: "",
 };
 function HomePage({ isLoggedIn, setIsLoggedIn }) {
+    const [popBooks, setPopBooks] = useState([]);
+
+    useEffect(() => {
+        // Fetch popBooks from an endpoint
+        api.get("/Books")
+            .then((response) => {
+                if (response.data.isValid) {
+                    const { booksResponse } = response.data;
+                    setPopBooks(booksResponse);
+                }
+            })
+            .catch((error) => {
+                // setLoading(false);
+            })
+            .finally(() => {
+                // setLoading(false);
+            });
+    }, []); // Empty dependency array ensures this effect runs only once after initial render
+
     return (
         <div className="bg-[#FFF7E7]">
             <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
