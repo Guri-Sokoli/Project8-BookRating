@@ -19,12 +19,5 @@ RUN npm install
 COPY . .
 
 # Serve the production build with Nginx
-FROM nginx:alpine
-
-# Copy the build output from the previous stage to Nginx's html directory
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Start Nginx server
-CMD ["nginx", "-g", "daemon off;"]
 
 ENTRYPOINT [ "npm", "start" ]
