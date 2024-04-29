@@ -9,51 +9,6 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const BookshelfPage = () => {
-    const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (!isLoggedIn) {
-            navigate("/login");
-        }
-    }, [isLoggedIn, navigate]);
-
-    const [books, setBooks] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [reviews, setReviews] = useState([]);
-    const [selectedBook, setSelectedBook] = useState(null);
-    const [editingReview, setEditingReview] = useState(null);
-    const [updatedReview, setUpdatedReview] = useState("");
-    const [updatedRating, setUpdatedRating] = useState(0);
-
-    useEffect(() => {
-        getMyBooks();
-        getMyReviews();
-    }, []);
-
-    function getMyBooks() {
-        api.get("/UserBooks/MyBooks")
-            .then((response) => {
-                setBooks(response.data);
-            })
-            .catch((error) => {
-                setLoading(false);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-    }
-
-    function getMyReviews() {
-        api.get("/Reviews/my-reviews")
-            .then((response) => {
-                setReviews(response.data);
-            })
-            .catch((error) => {
-                console.error("Error fetching user reviews:", error);
-            });
-    }
 
     const handleUpdateReview = (bookTitle) => {
         const reviewToUpdate = reviews.find(
