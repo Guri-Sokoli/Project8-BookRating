@@ -11,9 +11,9 @@ WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
 COPY package.json /app
-COPY public/ /app/
-COPY src/ /app/
-COPY package.json /app/
+COPY public/ /app
+COPY src/ /app
+COPY package.json /app
 
 # Install dependencies
 RUN npm install
@@ -21,5 +21,5 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Run the application
+# Runiuyu56 the application
 CMD ["npm", "start"]
