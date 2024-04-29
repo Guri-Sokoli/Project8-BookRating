@@ -2,61 +2,60 @@ import react from "react";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import BookReview from "../components/BookInfoPageComponents/BookReview";
+import { handleLogout } from "../redux/actions";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import api from "../config/config";
 
 const ProfilePage = () => {
-    var reviews = [
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NdsadsasaddasAme",
-            stars: 3.5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NAme",
-            stars: 5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NAme",
-            stars: 5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NAme",
-            stars: 5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NAme",
-            stars: 5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "6th Review in new page",
-            stars: 5,
-            review: "6th Review in new page6th Review in new page6th Review in new page6th Review in new page6th Review in new page6th Review in new page6th Review in new page.",
-        },
-    ];
-    const reviewsPerPage = 5;
-    const [currentPage, setCurrentPage] = useState(1);
-    const maxPage = Math.ceil(reviews.length / reviewsPerPage);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const currentReviews = reviews.slice(
-        (currentPage - 1) * reviewsPerPage,
-        currentPage * reviewsPerPage
-    );
-
-    const handleNext = () => {
-        setCurrentPage((prev) => Math.min(prev + 1, maxPage));
+    const handleLogoutClick = () => {
+        dispatch(handleLogout());
+        navigate("/login");
     };
 
-    const handlePrev = () => {
-        setCurrentPage((prev) => Math.max(prev - 1, 1));
+    const [userInfo, setUserInfo] = useState({
+        name: "",
+        email: "",
+        password: "",
+        newpassword: "",
+        confirmpassword: "",
+    });
+
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        // Fetch user details
+        api.get("/User/details")
+            .then((response) => {
+                setUserInfo(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching user details:", error);
+            });
+
+        // Fetch user's reviews
+        api.get("/Reviews/my-reviews")
+            .then((response) => {
+                setReviews(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching user reviews:", error);
+            });
+    }, []);
+
+    const handleChange = (e) => {
+        setUserInfo({
+            ...userInfo,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle the form submission, e.g. by sending a request to the server
     };
 
     const renderStars = (rating) => {
@@ -83,6 +82,9 @@ const ProfilePage = () => {
             fill = "#BAB6AE";
         }
 
+        console.log(reviews);
+        console.log(reviews);
+        console.log(reviews);
         return (
             <svg
                 key={i}
@@ -115,55 +117,34 @@ const ProfilePage = () => {
         );
     };
 
-    const [userInfo, setUserInfo] = useState({
-        name: "",
-        email: "",
-        oldpassword: "",
-        newpassword: "",
-    });
+    console.log(reviews);
 
-    const handleChange = (e) => {
-        setUserInfo({
-            ...userInfo,
-            [e.target.name]: e.target.value,
-        });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle the form submission, e.g. by sending a request to the server
-    };
     return (
         <div className="bg-[#FFF7E7] min-h-screen">
             <Header />
             <div className="flex flex-col justify-center items-center md:justify-evenly">
+                {/* User Info */}
                 <div className="flex flex-col w-min text-wrap justify-center text-center mt-8">
+                    {/* Display user info */}
                     <img
                         className="flex w-32 h-32 rounded-full bg-gray-300 drop-shadow-xl m-4"
                         src="https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b"
                         alt="User Picture"
                     />
-                </div>
-
-                <form
-                    onSubmit={handleSubmit}
-                    className="flex flex-col justify-center items-center md:mt-12"
-                >
                     <div className="text-[#59461B] text-3xl font-semibold md:text-4xl mb-4">
-                        {" "}
-                        User Info
+                        {userInfo.username}
                     </div>
                     <div>
-                        <label htmlFor="name">Name:</label>
+                        <label htmlFor="username">username:</label>
                         <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={userInfo.name}
+                            type="username"
+                            id="username"
+                            name="username"
+                            value={userInfo.username}
                             onChange={handleChange}
                         />
                     </div>
-                    <div className="my-4">
+                    <div>
                         <label htmlFor="email">Email:</label>
                         <input
                             type="email"
@@ -173,94 +154,52 @@ const ProfilePage = () => {
                             onChange={handleChange}
                         />
                     </div>
-                    {/* Add other input fields as necessary */}
-                    <div>
-                        <label htmlFor="password">Password:</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={userInfo.password}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="newpassword">New Password:</label>
-                        <input
-                            type="password"
-                            id="newpassword"
-                            name="newpassword"
-                            value={userInfo.newpassword}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="confirmpassword">
-                            Confirm Password:
-                        </label>
-                        <input
-                            type="password"
-                            id="confirmpassword"
-                            name="confirmpassword"
-                            value={userInfo.confirmpassword}
-                            onChange={handleChange}
-                        />
-                    </div>
+
                     <button
                         type="submit"
                         className="p-2 rounded-lg border-2 border-[#59461B] hover:bg-[#59461B] hover:text-white hover:scale-110 duration-100 "
                     >
                         Save Changes
                     </button>
-                </form>
+                </div>
 
+                <button
+                    onClick={handleLogoutClick}
+                    className="bg-[#59461B] font-semibold text-white rounded-lg p-2 mt-4 md:px-12"
+                >
+                    Log Out
+                </button>
+
+                {/* Reviews */}
                 <div>
                     <div className="flex flex-col bg-[#FFF7E7] justify-center items-center mx-4 md:mr-12">
                         <h1 className="flex items-center justify-center text-[#59461B] text-4xl mt-16">
                             Reviews
                         </h1>
+                        {/* Divider */}
                         <divider className="flex w-1/2 h-1 bg-[#59461B] rounded-xl fill-[#59461B] mt-4"></divider>
 
-                        {currentReviews.map((review) => (
-                            <div className="flex flex-col bg-[#F9F1DE] md:flex-row justify-center md:justify-around items-center my-8">
+                        {/* Display user reviews */}
+                        {reviews.map((review, index) => (
+                            <div
+                                key={index}
+                                className="flex flex-col bg-[#F9F1DE] md:flex-row justify-center md:justify-around items-center my-8"
+                            >
                                 <div className="flex flex-row md:flex-col px-12">
-                                    <div className="flex flex-row justify-center items-center">
-                                        <img
-                                            className="rounded-full w-16 h-16 bg-gray-300 m-4 md:w-32 md:h-32"
-                                            src={
-                                                review.pfp
-                                                    ? review.pfp
-                                                    : "/user.png"
-                                            }
-                                            alt="User Picture"
-                                        />
-                                        <h1>{review.username}</h1>
+                                    <div className="flex flex-col text-lg font-semibold justify-center items-center">
+                                        <h1>{review.bookTitle}</h1>
+                                        <h1>{review.bookAuthor}</h1>
                                     </div>
                                     <div className="flex flex-row justify-center items-center mb-4">
-                                        {renderStars(review.stars)}
+                                        {renderStars(review.rating)}
                                     </div>
                                 </div>
-                                <h1 className="px-12 text-wrap w-full text-[#59461B] text-md font-medium sm:text-lg md:text-xl">
-                                    {review.review}
+                                <h1>Review Comment:</h1>
+                                <h1 className="px-12 text-wrap w-full text-[#59461B] text-md font-medium sm:text-lg md:text-lg">
+                                    {review.comment}
                                 </h1>
                             </div>
                         ))}
-                        <div>
-                            <button
-                                onClick={handlePrev}
-                                disabled={currentPage === 1}
-                                className="p-2 rounded-lg border-2 border-[#59461B] hover:bg-[#59461B] hover:text-white hover:scale-110 duration-100 "
-                            >
-                                Previous
-                            </button>
-                            <button
-                                onClick={handleNext}
-                                disabled={currentPage === maxPage}
-                                className="p-2 rounded-lg border-2 border-[#59461B] hover:bg-[#59461B] hover:text-white hover:scale-110 duration-100 "
-                            >
-                                Next
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>

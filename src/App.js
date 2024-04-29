@@ -19,14 +19,37 @@ import BookPage from "./pages/BookPage.js";
 
 import ProfilePage from "./pages/ProfilePage";
 import AdminPage from "./pages/AdminPage.js";
+import { useSelector } from "react-redux";
 
 // Inside your Router component
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { LOGIN_SUCCESS } from "./redux/actions";
 
 const App = () => {
-    const backendURL = process.env.REACT_APP_BACKEND_URL;
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const username = localStorage.getItem("user");
+
+        //It's okay to not validate on first entry since token is validate in each request also
+        if (token && username) {
+            dispatch({
+                type: LOGIN_SUCCESS,
+                payload: { username: username },
+            });
+        }
+    }, []);
+
     return (
         <Router>
+            <ToastContainer />
+
             <Routes>
                 <Route
                     path="/signup"
@@ -38,12 +61,7 @@ const App = () => {
                 />
                 <Route
                     path="/"
-                    element={
-                        <HomePage
-                            isLoggedIn={isLoggedIn}
-                            setIsLoggedIn={setIsLoggedIn}
-                        />
-                    }
+                    element={<HomePage isLoggedIn={isLoggedIn} />}
                 />
                 <Route
                     path="/protected"
@@ -77,7 +95,7 @@ const App = () => {
                 />
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/admin" element={<AdminPage />} />
-                <Route path="/book/:bookId" element={<BookPage isLoggedIn />} />
+                <Route path="/book/:id" element={<BookPage />} />
             </Routes>
         </Router>
     );
