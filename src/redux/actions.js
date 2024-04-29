@@ -23,7 +23,6 @@ export const login = (credentials) => {
                 });
             })
             .catch((error) => {
-                // Error handling, assuming the error message is in error.response.data.message
                 dispatch({
                     type: LOGIN_FAILURE,
                     error: error.response

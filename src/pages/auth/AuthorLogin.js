@@ -11,7 +11,6 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Send request n'backend...
     };
 
     return (
@@ -27,7 +26,6 @@ const Login = () => {
                 </div>
             </wrapper>
             <form
-                // form mat madhe / marginat mi fix as well
                 onSubmit={handleSubmit}
                 className="flex flex-col bg-[#FFF7E7] w-2/3 md:w-1/3 md:items-center md:justify-center p-12 m-12"
             >

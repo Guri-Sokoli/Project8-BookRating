@@ -16,7 +16,6 @@ const RecommendationSection = ({ books }) => {
                     />
                 </div>
             ))}
-            {/* Render the book object you created */}
         </div>
     );
 };

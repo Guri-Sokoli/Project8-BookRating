@@ -27,7 +27,6 @@ const ProfilePage = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        // Fetch user details
         api.get("/User/details")
             .then((response) => {
                 setUserInfo(response.data);
@@ -36,7 +35,6 @@ const ProfilePage = () => {
                 console.error("Error fetching user details:", error);
             });
 
-        // Fetch user's reviews
         api.get("/Reviews/my-reviews")
             .then((response) => {
                 setReviews(response.data);
@@ -55,7 +53,6 @@ const ProfilePage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle the form submission, e.g. by sending a request to the server
     };
 
     const renderStars = (rating) => {

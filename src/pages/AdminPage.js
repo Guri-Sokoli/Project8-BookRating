@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "../components/Header.js";
 
 const AdminPage = () => {
-    // User Information State
     const [userInfo, setUserInfo] = useState({
         name: "",
         email: "",
@@ -11,7 +10,6 @@ const AdminPage = () => {
         confirmNewPassword: "",
     });
 
-    // Book Information State
     const [bookInfo, setBookInfo] = useState({
         title: "",
         description: "",
@@ -19,7 +17,6 @@ const AdminPage = () => {
         coverImage: "",
     });
 
-    // Admin's Books State
     const [books, setBooks] = useState([
         {
             title: "Book One",
@@ -37,7 +34,6 @@ const AdminPage = () => {
         },
     ]);
 
-    // Handle User Information Change
     const handleUserChange = (e) => {
         setUserInfo({
             ...userInfo,
@@ -45,7 +41,6 @@ const AdminPage = () => {
         });
     };
 
-    // Handle Book Information Change
     const handleBookChange = (e) => {
         setBookInfo({
             ...bookInfo,
@@ -53,16 +48,12 @@ const AdminPage = () => {
         });
     };
 
-    // Handle User Information Submission
     const handleUserSubmit = (e) => {
         e.preventDefault();
-        // Handle user information submission, e.g., send a request to the server
     };
 
-    // Handle Book Submission
     const handleBookSubmit = (e) => {
         e.preventDefault();
-        // Handle book submission, e.g., send a request to the server
         const newBook = {
             title: bookInfo.title,
             description: bookInfo.description,
@@ -82,7 +73,6 @@ const AdminPage = () => {
         <div className="bg-[#FFF7E7] min-h-screen">
             <Header />
             <div className="flex flex-col justify-center items-center md:justify-evenly">
-                {/* User Information Section */}
                 <form
                     onSubmit={handleUserSubmit}
                     className="flex flex-col justify-center items-center md:mt-12"
@@ -150,7 +140,6 @@ const AdminPage = () => {
                     </button>
                 </form>
 
-                {/* Add Book Section */}
                 <form
                     onSubmit={handleBookSubmit}
                     className="flex flex-col justify-center items-center md:mt-12"
@@ -205,7 +194,6 @@ const AdminPage = () => {
                     </button>
                 </form>
 
-                {/* Display Admin's Books */}
                 <div className="flex flex-col bg-[#FFF7E7] justify-center items-center mx-4 md:mr-12">
                     <h1 className="flex items-center justify-center text-[#59461B] text-4xl mt-16">
                         Your Books

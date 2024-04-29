@@ -55,7 +55,6 @@ const BookshelfPage = () => {
             });
     }
 
-
     const handleUpdateReview = (bookTitle) => {
         const reviewToUpdate = reviews.find(
             (review) => review.bookTitle === bookTitle
@@ -70,7 +69,6 @@ const BookshelfPage = () => {
     const handleSubmitReviewUpdate = () => {
         if (!selectedBook || !editingReview || !updatedRating) return;
 
-        // Find the book based on the selected book title
         const bookToUpdate = books.find((book) => book.title === selectedBook);
         if (!bookToUpdate) {
             toast.error("Book not found.");
@@ -155,7 +153,6 @@ const BookshelfPage = () => {
         );
     };
 
-    // console log the request sent
     return (
         <div className="bg-[#FFF7E7]">
             <Header />
@@ -184,10 +181,7 @@ const BookshelfPage = () => {
                                             className="flex w-32 h-48 bg-gray-300 drop-shadow-xl m-4 md:mx-12 md:w-48 md:h-64"
                                             src={`${baseURL}${book.coverLink}`}
                                             alt="Cover of Already Reading Book"
-                                        >
-                                            {/* Image of Cover of Already Reading Book */}
-                                        </img>
-                                        {/* ... */}
+                                        ></img>
                                     </Link>
                                     <div className="flex flex-col justify-center items-center md:pl-12">
                                         <h1 className="text-wrap text-lg sm:text-xl md:text-2xl text-center text-[#59461B]">

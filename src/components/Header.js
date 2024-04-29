@@ -20,14 +20,12 @@ const Header = ({}) => {
         if (!isLoggedIn) {
             navigate("/login");
         } else {
-            // handle profile click...
         }
     };
     const [username, setUsername] = useState("");
 
     useEffect(() => {
         if (isLoggedIn) {
-            // Fetch user details if logged in
             api.get("/User/details")
                 .then((response) => {
                     setUsername(response.data.username);

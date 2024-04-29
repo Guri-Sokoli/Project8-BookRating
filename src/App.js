@@ -11,8 +11,6 @@ import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
 import AuthorSignup from "./pages/auth/AuthorSignup";
 import AuthorLogin from "./pages/auth/AuthorLogin";
-// import PrivateRoute from "./components/PrivateRoute";
-// import PrivateRoute from "./components/PrivateRoute";
 import ProtectedPage from "./pages/ProtectedPage";
 import BookshelfPage from "./pages/BookshelfPage";
 import BookPage from "./pages/BookPage.js";
@@ -21,7 +19,6 @@ import ProfilePage from "./pages/ProfilePage";
 import AdminPage from "./pages/AdminPage.js";
 import { useSelector } from "react-redux";
 
-// Inside your Router component
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -37,7 +34,6 @@ const App = () => {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
 
-        //It's okay to not validate on first entry since token is validate in each request also
         if (token && username) {
             dispatch({
                 type: LOGIN_SUCCESS,

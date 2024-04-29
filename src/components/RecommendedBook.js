@@ -62,7 +62,6 @@ const RecommendedBook = ({ title, author, description, cover, rating }) => {
     return (
         <div className="flex flex-row bg-[#E8E0C6] ml-8 mb-12">
             <div className="flex w-32 h-48 bg-gray-300 drop-shadow-xl m-6 md:mx-12 md:w-48 md:h-64">
-                {/* Image of Cover of Already Reading Book */}
                 <img
                     src={cover}
                     alt="Cover of Book"

@@ -6,7 +6,7 @@ import { baseURL } from "../config/config";
 const PopularSectionHome = ({ books }) => {
     console.log(books);
     return (
-        <div className="flex flex-nowrap scroll-snap-x snap-start no-scrollbar">
+        <div className="flex flex-nowrap scroll-snap-x snap-start no-scrollbar mb-8">
             {books.map((book, index) => (
                 <div className="scroll-snap-align-start">
                     <Book

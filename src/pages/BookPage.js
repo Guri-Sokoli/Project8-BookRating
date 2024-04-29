@@ -114,7 +114,6 @@ const BookPage = () => {
                 </div>
                 {/* <h1>{book.title}</h1>*/}
                 <div className="flex flex-col m-12 md:ml-12">
-                    <h1 className="">Book ID: {book.id}</h1>
                     <h1 className="text-[#59461B] text-xl font-semibold sm:text-2xl md:text-3xl">
                         {book.title}
                     </h1>

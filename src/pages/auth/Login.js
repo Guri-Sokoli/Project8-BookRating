@@ -6,11 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
 
 const Login = () => {
     const [formData, setFormData] = useState({ username: "", password: "" });
-    const [displayMessage, setDisplayMessage] = useState(""); // Add this line
+    const [displayMessage, setDisplayMessage] = useState("");
     const dispatch = useDispatch();
     const isLoggedIn = useSelector((state) => state.login.username);
     const navigate = useNavigate();
