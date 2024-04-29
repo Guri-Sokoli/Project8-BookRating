@@ -18,14 +18,12 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Build the React app
-WORKDIR /app
-RUN npm start
-
 # Serve the production build with Nginx
+FROM nginx:alpine
 
 # Copy the build output from the previous stage to Nginx's html directory
 COPY --from=build /app/build /usr/share/nginx/html
+
 # Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
 
