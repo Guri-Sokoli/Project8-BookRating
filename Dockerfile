@@ -10,7 +10,7 @@ EXPOSE 3000
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY package.json package-lock.json./
 
 # Install dependencies
 RUN npm install
@@ -19,7 +19,7 @@ RUN npm install
 COPY . .
 
 # Build the React app
-WORKDIR /src
+WORKDIR /app
 RUN npm start
 
 # Serve the production build with Nginx
