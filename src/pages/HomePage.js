@@ -2,8 +2,8 @@ import Header from "../components/Header.js";
 import LastReadBook from "../components/LastReadBook.js";
 import PopularSectionHome from "../components/PopularSectionHome.js";
 import RecommendationSection from "../components/RecommendationSection.js";
-import FooterHome from "../components/FooterHome.js";
 import api from "../config/config.js";
+import Footer from "../components/Footer.js";
 
 import { useState, useEffect } from "react";
 

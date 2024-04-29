@@ -1,6 +1,6 @@
-import Header from "../components/Header";
+import Header from "../components/Header.js";
 import ReviewIcon from "../assets/review.svg";
-import FooterHome from "../components/FooterHome.js";
+import Footer from "../components/Footer.js";
 import { useEffect, useState } from "react";
 import api from "../config/config.js";
 import { baseURL } from "../config/config.js";
@@ -267,7 +267,7 @@ const BookshelfPage = () => {
                     </button>
                 </div>
             )}
-            <FooterHome />
+            <Footer />
         </div>
     );
 };
