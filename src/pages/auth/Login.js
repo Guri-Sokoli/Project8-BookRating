@@ -1,48 +1,34 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import home from "../../assets/home.svg";
+import { login } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 
 const Login = () => {
     const [formData, setFormData] = useState({ username: "", password: "" });
-    const [displayMessage, setDisplayMessage] = useState("");
-    // const history = useHistory(); // Get the history object
+    const [displayMessage, setDisplayMessage] = useState(""); // Add this line
+    const dispatch = useDispatch();
+    const isLoggedIn = useSelector((state) => state.login.username);
+    const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch(
-                process.env.REACT_APP_BACKEND_URL + "/login",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formData),
-                }
-            );
+    function handleInputChange(e) {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
 
-            if (response.ok) {
-                // Redirect to the bookshelf page upon successful login
-                window.location.href = "/bookshelf";
-            } else {
-                const errorData = await response.json();
-                if (errorData.errors) {
-                    if (errorData.errors.Email) {
-                        // Display email error
-                        setDisplayMessage(errorData.errors.Email[0]);
-                    }
-                    if (errorData.errors.Password) {
-                        // Display password error
-                        setDisplayMessage(errorData.errors.Password[0]);
-                    }
-                }
-            }
-        } catch (error) {
-            console.error("Error during login:", error);
-            // Handle error, e.g. by showing a message to the user
+    function handleLoginSubmit() {
+        dispatch(login(formData));
+    }
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            toast.success("Loged in successfully!");
+            navigate("/bookshelf");
         }
-    };
+    }, [isLoggedIn]);
 
     return (
         <div className="flex flex-col justify- items-center bg-[#59461B]">
@@ -56,10 +42,7 @@ const Login = () => {
                     </div>
                 </div>
             </wrapper>
-            <form
-                onSubmit={handleSubmit}
-                className="flex flex-col bg-[#FFF7E7] w-2/3 md:w-1/3 md:items-center md:justify-center p-12 m-12"
-            >
+            <div className="flex flex-col bg-[#FFF7E7] w-2/3 md:w-1/3 md:items-center md:justify-center p-12 m-12">
                 <h1 className="text-[#59461B] font-semibold text-5xl text-center">
                     bR
                 </h1>
@@ -88,24 +71,9 @@ const Login = () => {
                     </label>
                     <input
                         name="username"
-                        onChange={handleSubmit}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
                         required
-                    />
-                </div>
-                <div className="flex flex-col  text-[#59461B]">
-                    <label
-                        htmlFor="email"
-                        className="text-lg pt-2 pb-1 font-semibold"
-                    >
-                        email
-                    </label>
-                    <input
-                        name="email"
-                        type="email"
-                        onChange={handleSubmit}
-                        className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
-                        required
+                        onChange={handleInputChange}
                     />
                 </div>
                 <div className="flex flex-col  text-[#59461B]">
@@ -116,16 +84,17 @@ const Login = () => {
                         Password
                     </label>
                     <input
-                        type=""
+                        type="password"
                         name="password"
-                        onChange={handleSubmit}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
                         required
+                        onChange={handleInputChange}
                     />
                 </div>
 
                 <button
                     type="submit"
+                    onClick={handleLoginSubmit}
                     className="bg-[#59461B] font-semibold text-white rounded-lg p-2 mt-4 md:px-12"
                 >
                     Log In
@@ -139,7 +108,7 @@ const Login = () => {
                         Sign Up Here
                     </Link>
                 </h2>
-            </form>
+            </div>
         </div>
     );
 };

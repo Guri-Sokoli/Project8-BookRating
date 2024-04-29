@@ -4,10 +4,39 @@ import book from "../assets/book.svg";
 import community from "../assets/community.svg";
 import profile from "../assets/profile.svg";
 import "../index.css";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import api from "../config/config";
 
 import { Link } from "react-router-dom";
 
-const Header = ({ isLoggedIn, setIsLoggedIn }) => {
+const Header = ({}) => {
+    const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+    const navigate = useNavigate();
+
+    const handleProfileClick = () => {
+        if (!isLoggedIn) {
+            navigate("/login");
+        } else {
+            // handle profile click...
+        }
+    };
+    const [username, setUsername] = useState("");
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            // Fetch user details if logged in
+            api.get("/User/details")
+                .then((response) => {
+                    setUsername(response.data.username);
+                })
+                .catch((error) => {
+                    console.error("Error fetching user details:", error);
+                });
+        }
+    }, [isLoggedIn]);
     return (
         <wrapper className="flex flex-col">
             <header className="md:flex md:flex-row md:items-center md:justify-between">
@@ -68,7 +97,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                         </li>
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
                             <Link
-                                to={isLoggedIn ? "/bookshelf" : "/signup"}
+                                to={isLoggedIn ? "/bookshelf" : "/login"}
                                 className="flex flex-col justify-center items-center sm:text-xl"
                             >
                                 <img
@@ -81,7 +110,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                         </li>
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
                             <Link
-                                to={isLoggedIn ? "/community" : "/signup"}
+                                to={isLoggedIn ? "/community" : "/login"}
                                 className="flex flex-col justify-center items-center sm:text-xl"
                             >
                                 <img
@@ -94,7 +123,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                         </li>
                         <li className="flex flex-col justify-center items-center cursor-pointer transform transition-all duration-200 ease-in-out hover:scale-125 w-24 h-24">
                             <Link
-                                to={isLoggedIn ? "/profile" : "/signup"}
+                                to={isLoggedIn ? "/profile" : "/login"}
                                 className="flex flex-col justify-center items-center sm:text-xl"
                             >
                                 <img
@@ -102,7 +131,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                                     src={profile}
                                     alt="Profile Icon"
                                 />
-                                Profile
+                                {isLoggedIn ? username : "Profile"}
                             </Link>
                         </li>
                     </ul>

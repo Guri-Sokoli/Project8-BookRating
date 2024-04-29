@@ -1,83 +1,62 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-// import home from "../../assets/home.svg";
+import api from "../../config/config";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-    const [formData, setFormData] = useState({ username: "", password: "" });
-    const [displayMessage, setDisplayMessage] = useState(""); // Add this line
+    const navigate = useNavigate(); // Initialize useNavigate
+    const [formData, setFormData] = useState({
+        username: "",
+        email: "",
+        password: "",
+    });
+    const [isLoading, setIsLoading] = useState(false); // Loading state
+    const [error, setError] = useState(""); // Error state
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post(
-                "http://localhost:5108/api/Auth/register/user",
-                {
-                    username: formData.username,
-                    email: formData.email,
-                    password: formData.password,
+    const handleRegister = (e) => {
+        e.preventDefault(); // Prevent default form submission
+        setIsLoading(true); // Set loading state
+        api.post("/Auth/register", formData)
+            .then((response) => {
+                if (response.data.isValid) {
+                    toast.success(
+                        "Registered successfully! You will be redirected to login!"
+                    );
+                    setTimeout(() => {
+                        navigate("/login");
+                    }, 5000);
+                } else {
+                    toast.error("Please try again later!");
                 }
-            );
-            console.log(response);
-            setDisplayMessage("User created successfully");
-        } catch (error) {
-            console.log(error.response.data); // Log the error response data for debugging
-            if (
-                error.response &&
-                error.response.data &&
-                error.response.data.errors &&
-                error.response.data.errors.Password
-            ) {
-                // Extract and display specific error messages for the "Password" field
-                const passwordErrors = error.response.data.errors.Password;
-                setDisplayMessage(passwordErrors.join(". ")); // Join multiple error messages with a period
-            } else {
-                // Display a generic error message
-                setDisplayMessage("An error occurred. Please try again.");
-            }
-        }
+            })
+            .catch((error) => {
+                toast.error(error.response.data.message);
+                setError(error.response.data.message); // Set error state
+            })
+            .finally(() => {
+                setIsLoading(false); // Reset loading state
+            });
     };
 
     return (
-        <div className="flex flex-col justify- items-center bg-[#59461B] w-screen h-screen">
-            <wrapper className="flex flex-col bg-[#FFF7E7] w-screen">
-                <div
-                    className="flex items-center justify-around py-4
-                        md:w-full"
-                >
-                    <div className="text-3xl sm:text-4xl md:text-5xl text-[#59461B]">
-                        <Link to="/">bR</Link>
-                    </div>
-                </div>
-            </wrapper>
+        <div className="flex flex-col justify-center items-center bg-[#59461B] w-screen h-screen">
             <form
-                onSubmit={handleSubmit}
+                onSubmit={handleRegister} // Change to handleRegister
                 className="flex flex-col bg-[#FFF7E7] w-2/3 md:w-1/3 md:items-center md:justify-center p-12 m-12"
             >
                 <h1 className="text-[#59461B] font-semibold text-5xl text-center">
                     bR
                 </h1>
                 <h2 className="text-[#59461B] font-semibold text-2xl text-center pt-2">
-                    Regjistration / Sign Up
+                    Registration / Sign Up
                 </h2>
-                <h3 className="text-[#ABABAB] text-md text-center py-2  ">
-                    For{" "}
-                    <a className="underline underline-offset-2 text-black font-normal">
-                        Readers
-                    </a>{" "}
-                    Only
-                </h3>
-                <h2 className="text-[#59461B] font-semibold text-md text-center pb-2">
-                    Are you an author?{" "}
-                    <Link to="/author-signup" className="underline">
-                        Sign Up Here
-                    </Link>
-                </h2>
-                <div className="flex flex-col  text-[#59461B]">
+                {/* Username input field */}
+                <div className="flex flex-col text-[#59461B]">
                     <label
                         htmlFor="username"
                         className="text-lg pt-2 pb-1 font-semibold"
@@ -91,12 +70,13 @@ const Signup = () => {
                         required
                     />
                 </div>
-                <div className="flex flex-col  text-[#59461B]">
+                {/* Email input field */}
+                <div className="flex flex-col text-[#59461B]">
                     <label
                         htmlFor="email"
                         className="text-lg pt-2 pb-1 font-semibold"
                     >
-                        email
+                        Email
                     </label>
                     <input
                         name="email"
@@ -106,7 +86,9 @@ const Signup = () => {
                         required
                     />
                 </div>
-                <div className="flex flex-col  text-[#59461B]">
+
+                {/* Password input field */}
+                <div className="flex flex-col text-[#59461B]">
                     <label
                         htmlFor="password"
                         className="text-lg pt-2 pb-1 font-semibold"
@@ -114,23 +96,23 @@ const Signup = () => {
                         Password
                     </label>
                     <input
-                        type=""
+                        type="password"
                         name="password"
                         onChange={handleChange}
                         className="rounded-xl border-2 border-[#59461B] p-1 py-2 px-2 max-w-64"
                         required
                     />
                 </div>
-
-                <p style={{ color: "green" }}>{displayMessage}</p>
-
+                {/* Display error message */}
+                {error && <p style={{ color: "red" }}>{error}</p>}
                 <button
                     type="submit"
                     className="bg-[#59461B] font-semibold text-white rounded-lg p-2 mt-4 md:px-12"
+                    disabled={isLoading} // Disable button when loading
                 >
-                    Sign Up
+                    {isLoading ? "Signing Up..." : "Sign Up"}{" "}
+                    {/* Change button text based on loading state */}
                 </button>
-
                 <h2 className="text-[#59461B] font-semibold text-lg text-center mt-8">
                     Already have an account?{" "}
                     <Link to="/login" className="underline">

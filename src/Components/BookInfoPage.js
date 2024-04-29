@@ -2,60 +2,64 @@ import React, { useState, useEffect } from "react";
 import infoIcon from "../assets/information.svg";
 import Footer from "./Footer";
 import BookReview from "../components/BookInfoPageComponents/BookReview";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import api from "../config/config";
+import { toast } from "react-toastify";
+
 const BookInfoPage = () => {
-    reviews = [
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NdsadsasaddasAme",
-            stars: 3.5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NAme",
-            stars: 5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NAme",
-            stars: 5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NAme",
-            stars: 5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "User NAme",
-            stars: 5,
-            review: "Consequat magna ullamco cupidatat ipsum irure in laboris nulla aute tempor minim Lorem dolor exercitation. Aliquip aute do esse ex nulla quis veniam laboris velit incididunt. Ad consequat excepteur irure exercitation eu sit ut aliqua incididunt irure cupidatat veniam. Ullamco laboris nisi culpa adipisicing consectetur do. In eu sit mollit culpa adipisicing amet sunt labore reprehenderit nulla ut pariatur.",
-        },
-        {
-            pfp: "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-            username: "6th Review in new page",
-            stars: 5,
-            review: "6th Review in new page6th Review in new page6th Review in new page6th Review in new page6th Review in new page6th Review in new page6th Review in new page.",
-        },
-    ];
-    const [page, setPage] = useState(0);
-    var [reviews, setReviews] = useState([]);
-    const reviewsPerPage = 5;
-    const startIndex = (page - 1) * reviewsPerPage;
-    const selectedReviews = reviews.slice(
-        startIndex,
-        startIndex + reviewsPerPage
-    );
-    useEffect(() => {
-        // fetch and setReviews with page and limit
-    }, [page]);
-
-    // reviews specific to book id
-
     const [activeSection, setActiveSection] = useState("authorInfo");
+    const [page, setPage] = useState(0);
+    const reviewsPerPage = 5;
+    const { id } = useParams();
+    const [reviews, setReviews] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [addReview, setAddReview] = useState(false);
+    const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+    const [reviewText, setReviewText] = useState("");
+    const [rating, setRating] = useState(1);
+
+    const startIndex = (page - 1) * reviewsPerPage;
+    const selectedReviews = reviews
+        ? reviews.slice(startIndex, startIndex + reviewsPerPage)
+        : [];
+
+    useEffect(() => {
+        getBook();
+    }, [id]);
+
+    function getBook() {
+        api.get(`/Reviews/books/${id}/reviews`)
+            .then((response) => {
+                setReviews(response.data);
+            })
+            .catch((error) => {
+                setLoading(false);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }
+
+    const handleReviewSubmit = () => {
+        if (!isLoggedIn) {
+            toast.error("You must be logged in to add a review.");
+            return;
+        }
+        api.post(`/Reviews/books/${id}`, {
+            rating: rating,
+            comment: reviewText,
+        })
+            .then((response) => {
+                toast.success("Review Added Successfully!");
+            })
+            .catch((error) => {
+                toast.error(error.response.data);
+            });
+    };
+    if (loading) return <div>Loading Reviews...</div>;
+    if (!reviews) return <div>Invalid reviews</div>;
+
     const renderSection = () => {
         const renderStars = (rating) => {
             let stars = [];
@@ -168,10 +172,70 @@ const BookInfoPage = () => {
                             Reviews
                         </h1>
                         <divider className="flex w-1/2 h-1 bg-[#59461B] rounded-xl fill-[#59461B] mt-4"></divider>
-                        <button className="flex items-center justify-center w-40 md:w-64 h-12 bg-[#986F14] text-white rounded-xl mt-4 p-4">
+                        <button
+                            className="flex items-center justify-center w-40 md:w-64 h-12 bg-[#986F14] text-white rounded-xl mt-4 p-4"
+                            onClick={() => setAddReview(true)}
+                        >
                             Write a Review
                         </button>
-                        {selectedReviews.map((review, index) => (
+                        {addReview && (
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "start",
+                                    gap: "10px",
+                                    padding: "20px",
+                                    borderRadius: "5px",
+                                    boxShadow: "0px 0px 10px rgba(0,0,0,0.1)",
+                                }}
+                            >
+                                <label>Review: </label>
+                                <textarea
+                                    style={{
+                                        width: "100%",
+                                        minHeight: "100px",
+                                        padding: "10px",
+                                        borderRadius: "5px",
+                                        border: "1px solid #ccc",
+                                    }}
+                                    value={reviewText}
+                                    onChange={(e) =>
+                                        setReviewText(e.target.value)
+                                    }
+                                    placeholder="Write your review..."
+                                />
+                                <label>Rating (1-5)</label>
+                                <input
+                                    style={{
+                                        width: "100%",
+                                        padding: "10px",
+                                        borderRadius: "5px",
+                                        border: "1px solid #ccc",
+                                    }}
+                                    type="number"
+                                    min="1"
+                                    max="5"
+                                    value={rating}
+                                    onChange={(e) => setRating(e.target.value)}
+                                    placeholder="Rating (1-5)"
+                                />
+                                <button
+                                    style={{
+                                        padding: "10px 20px",
+                                        borderRadius: "5px",
+                                        border: "none",
+                                        backgroundColor: "#007BFF",
+                                        color: "white",
+                                        cursor: "pointer",
+                                    }}
+                                    onClick={handleReviewSubmit}
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        )}
+                        {reviews.map((review, index) => (
                             <BookReview key={index} review={review} />
                         ))}
                     </div>
@@ -182,7 +246,6 @@ const BookInfoPage = () => {
                         >
                             Previous
                         </button>
-                        {/* here i want as many circular buttons as there is information divided by 5 since there will be only 5 reviews per page */}
                         {Array.from(
                             {
                                 length: Math.ceil(
