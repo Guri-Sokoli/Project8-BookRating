@@ -11,6 +11,9 @@ WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
 COPY package.json /app
+COPY public/ /app/
+COPY src/ /app/
+COPY package.json /app/
 
 # Install dependencies
 RUN npm install
@@ -18,6 +21,5 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Serve the production build with Nginx
-
-ENTRYPOINT [ "npm", "start" ]
+# Run the application
+CMD ["npm", "start"]
