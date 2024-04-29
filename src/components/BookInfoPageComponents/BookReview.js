@@ -59,11 +59,7 @@ const BookReview = ({ review }) => {
       <div className="p-5 flex flex-col bg-[#F9F1DE]  justify-center md:justify-around items-center my-8 rounded">
         <div className="flex flex-col md:flex-col">
           <div className="flex flex-col justify-center items-center">
-            <img
-              className="rounded-full w-16 h-16 bg-gray-300 m-4 md:w-32 md:h-32"
-              src={review.pfp ? review.pfp : "/user.png"}
-              alt="User Picture"
-            />
+            <div className="rounded-full w-20 h-20 bg-orange-200 flex items-center justify-center uppercase">{ review.userName.charAt(0)}</div>
             <h1>{review.userName}</h1>
           </div>
           <div className="flex flex-row justify-center items-center mb-4">
