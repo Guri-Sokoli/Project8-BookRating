@@ -4112,19 +4112,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Buton\\.nuget\\packages\\": {}
+    "C:\\Users\\gresa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Buton\\Desktop\\BackEnd\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
+      "projectUniqueName": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
       "projectName": "BookRating",
-      "projectPath": "C:\\Users\\Buton\\Desktop\\BackEnd\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
-      "packagesPath": "C:\\Users\\Buton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Buton\\Desktop\\BackEnd\\Project8-BookRating\\BookRating\\BookRating\\obj\\",
+      "projectPath": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\BookRating.csproj",
+      "packagesPath": "C:\\Users\\gresa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gresa\\OneDrive\\Desktop\\Project\\Project8-BookRating\\BookRating\\BookRating\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Buton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gresa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

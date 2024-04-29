@@ -67,20 +67,10 @@ namespace BookRating.Services.Implementations
             return review;
         }
 
-        public async Task<IEnumerable<ReviewResponseDto>> GetUserReviews(int userId)
+        public async Task<IEnumerable<Review>> GetUserReviews(int userId)
         {
             return await _context.Reviews
                 .Where(r => r.UserId == userId)
-                .Select(r => new ReviewResponseDto
-                {
-                    Rating = r.Rating,
-                    Comment = r.Comment,
-                    CreatedAt = r.CreatedAt,
-                    BookTitle = r.Book.Title,
-                    BookAuthor = r.Book.Author,
-                    BookCategory = r.Book.Category.Name,
-                    BookAverageRating = r.Book.RateAvg
-                })
                 .ToListAsync();
         }
 

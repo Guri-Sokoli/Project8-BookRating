@@ -1,8 +1,8 @@
-name: dockercompose16337086227755240240
+name: dockercompose10528133663848181035
 services:
   bookrating:
     build:
-      context: C:\Users\Buton\Desktop\BackEnd\Project8-BookRating\BookRating
+      context: C:\Users\gresa\OneDrive\Desktop\Project\Project8-BookRating\BookRating
       dockerfile: Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -19,17 +19,17 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: C:\Users\Buton\AppData\Roaming/Microsoft/UserSecrets
+        source: C:\Users\gresa\AppData\Roaming/Microsoft/UserSecrets
         target: /root/.microsoft/usersecrets
         read_only: true
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\Buton\AppData\Roaming/ASP.NET/Https
+        source: C:\Users\gresa\AppData\Roaming/ASP.NET/Https
         target: /root/.aspnet/https
         read_only: true
         bind:
           create_host_path: true
 networks:
   default:
-    name: dockercompose16337086227755240240_default
+    name: dockercompose10528133663848181035_default
